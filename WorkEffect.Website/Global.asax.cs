@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WorkEffect.Website.App_Start;
 
 namespace WorkEffect.Website
 {
@@ -13,6 +14,9 @@ namespace WorkEffect.Website
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // OWIN
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
         }
     }
 }

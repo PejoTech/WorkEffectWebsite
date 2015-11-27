@@ -31,3 +31,12 @@ c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.W
 c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\obj\Debug\WorkEffect.Website.csprojResolveAssemblyReference.cache
 c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\obj\Debug\WorkEffect.Website.dll
 c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\obj\Debug\WorkEffect.Website.pdb
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.dll
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.Security.dll
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Owin.dll
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.xml
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.Security.xml
+c:\users\peter_000\documents\visual studio 2015\Projects\WorkEffect\WorkEffect.Website\bin\Microsoft.Owin.Security.Cookies.xml
