@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
-using WorkEffect.Website.Types;
+using WorkEffect.Website.Data;
 
 namespace WorkEffect.Website.Views
 {
     public abstract class AppViewPage<TModel> : WebViewPage<TModel>
     {
-        protected AppUser CurrentUser
-        {
-            get
-            {
-                return new AppUser(this.User as ClaimsPrincipal);
-            }
-        }
+        protected IIdentity CurrentUser => HttpContext.Current.User.Identity;
     }
 
     public abstract class AppViewPage : AppViewPage<dynamic>

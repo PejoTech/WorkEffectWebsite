@@ -1,0 +1,19 @@
+﻿@model WorkEffect.Website.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@Html.ValidationSummary(false)
+
+@using (Html.BeginForm())
+{
+    @Html.TextBoxFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Password)
+
+
+    <p>
+        <button type="submit">Register</button>
+    </p>
+}

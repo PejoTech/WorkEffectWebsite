@@ -4,18 +4,23 @@ using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
-using WorkEffect.Website.Types;
+using Microsoft.Owin.Security;
 
 namespace WorkEffect.Website.Controllers
 {
     public class BaseController : Controller
     {
-        public AppUser CurrentUser
+        public IAuthenticationManager AuthManager => HttpContext.Request.GetOwinContext().Authentication;
+
+        public ActionResult Index()
         {
-            get
-            {
-                return new AppUser(this.User as ClaimsPrincipal);
-            }
+            FetchViewBag();
+            return View();
+        }
+
+        private void FetchViewBag()
+        {
+            ViewBag.UserName = AuthManager.User.Identity.Name;
         }
     }
 }

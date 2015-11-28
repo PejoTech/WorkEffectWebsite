@@ -1,14 +1,6 @@
 ﻿@using System.Security.Policy
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Work Effect";
 }
 
-<h2>Index</h2>
-
-<p>
-    Hello @CurrentUser.Name. How's the weather in @CurrentUser.Country?
-</p>
-
-<p>
-    <a href="@Url.Action("logout", "auth")">Log Out</a>
-</p>
+@CurrentUser.Name

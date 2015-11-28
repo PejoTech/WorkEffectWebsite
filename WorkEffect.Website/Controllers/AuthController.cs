@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
+using WorkEffect.Website.Data;
 using WorkEffect.Website.Models;
 
 namespace WorkEffect.Website.Controllers
@@ -11,6 +15,26 @@ namespace WorkEffect.Website.Controllers
     [AllowAnonymous]
     public class AuthController : BaseController
     {
+        private readonly UserManager<AppUser> userManager;
+        
+        public AuthController() : this(Startup.UserManagerFactory.Invoke())
+        {
+        }
+
+        public AuthController(UserManager<AppUser> userManager)
+        {
+            this.userManager = userManager;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && userManager != null)
+            {
+                userManager.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
         // GET: Auth
         [HttpGet]
         public ActionResult LogIn(string returnUrl)
@@ -24,26 +48,21 @@ namespace WorkEffect.Website.Controllers
         }
 
         [HttpPost]
-        public ActionResult LogIn(AuthModel model)
+        public async Task<ActionResult> LogIn(AuthModel model)
         {
             if (!ModelState.IsValid)
             {
                 return View();
             }
 
-            // Don't do this in production!
-            if (model.Email == "admin@admin.com" && model.Password == "password")
+            var user = await userManager.FindAsync(model.Email, model.Password);
+
+            if (user != null)
             {
-                var identity = new ClaimsIdentity(new[] {
-                new Claim(ClaimTypes.Name, "Määän"),
-                new Claim(ClaimTypes.Email, "asd@asd.ch"),
-                new Claim(ClaimTypes.Country, "Speiz")
-            },
-                    "ApplicationCookie");
+                var identity = await userManager.CreateIdentityAsync(
+                    user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                var authManager = Request.GetOwinContext().Authentication;
-
-                authManager.SignIn(identity);
+                HttpContext.Request.GetOwinContext().Authentication.SignIn(identity);
 
                 return Redirect(GetRedirectUrl(model.ReturnUrl));
             }
@@ -51,6 +70,51 @@ namespace WorkEffect.Website.Controllers
             // user authN failed
             ModelState.AddModelError("", "Invalid email or password");
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Register(RegisterModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            var user = new AppUser
+            {
+                UserName = model.Email
+                
+            };
+
+            var result = await userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                await SignIn(user);
+                return RedirectToAction("index", "home");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+
+            return View();
+        }
+        private async Task SignIn(AppUser user)
+        {
+            var identity = await userManager.CreateIdentityAsync(
+                user, DefaultAuthenticationTypes.ApplicationCookie);
+
+            identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
+
+            AuthManager.SignIn(identity);
         }
 
         public ActionResult LogOut()
