@@ -9,9 +9,10 @@ using WorkEffect.Website.Models;
 namespace WorkEffect.Website.Controllers
 {
     [AllowAnonymous]
-    public class AuthController : Controller
+    public class AuthController : BaseController
     {
         // GET: Auth
+        [HttpGet]
         public ActionResult LogIn(string returnUrl)
         {
             var model = new AuthModel
