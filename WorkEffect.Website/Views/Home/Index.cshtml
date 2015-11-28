@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Security.Policy
 @{
     ViewBag.Title = "Index";
 }
@@ -6,7 +6,7 @@
 <h2>Index</h2>
 
 <p>
-    Hello @User.Identity.Name. How's the weather in @ViewBag.Country?
+    Hello @CurrentUser.Name. How's the weather in @CurrentUser.Country?
 </p>
 
 <p>
