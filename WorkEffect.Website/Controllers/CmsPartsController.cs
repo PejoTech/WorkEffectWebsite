@@ -7,7 +7,7 @@ using WorkEffect.Website.Types;
 
 namespace WorkEffect.Website.Controllers
 {
-    public class CmsPartsController : BaseEntityController<CmsPart>
+    public class CmsPartsController : BaseEntityController<CmsContent>
     {
     }
 }

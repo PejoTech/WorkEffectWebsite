@@ -25,21 +25,16 @@
 
         <dd>
             @{
-                var parts = ViewBag.Parts as List<CmsPart>;
-                if (parts != null && parts.Any())
+                foreach (var part in Model.CmsContents)
                 {
-                    foreach (var part in parts)
-                    {
-                        @Html.Partial("_PartDetails", part);
-                    }
-                }
-                else
-                {
-                    @:-
+                    @Html.Partial("_ContentDetails", part);
                 }
             }
 
-            @Html.ActionLink("+", "DetailsAddPart", new { id = Model.Id }, new { @class="btn btn-default" })
+            <a href="@Url.Action("DetailsAddPart", new { id = Model.Id })">
+                <i class="glyphicon glyphicon-plus"></i>
+                <span class="sr-only">Edit</span>
+            </a>
         </dd>
 
     </dl>

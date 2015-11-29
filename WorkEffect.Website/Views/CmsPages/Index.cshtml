@@ -1,4 +1,5 @@
-﻿@using WorkEffect.Website.Types
+﻿@using Microsoft.Owin.Security.DataHandler.Encoder
+@using WorkEffect.Website.Types
 @model IEnumerable<WorkEffect.Website.Types.CmsPage>
 
 @{
@@ -28,17 +29,9 @@
         </td>
         <td>
             @{
-                var parts = ViewBag.Parts as List<CmsPart>;
-                if (parts != null && parts.Any())
+                foreach (var content in item.CmsContents)
                 {
-                    foreach (var part in parts.Where(a => a.CmsPageId == item.Id))
-                    {
-                        @Html.Partial("_PartDetails", part);
-                    }
-                }
-                else
-                {
-                    @:-
+                    @Html.Partial("_ContentDetails", content);
                 }
             }
         </td>

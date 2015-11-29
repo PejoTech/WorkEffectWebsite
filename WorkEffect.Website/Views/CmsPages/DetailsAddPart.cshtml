@@ -25,21 +25,13 @@
 
         <dd>
             @{
-                var parts = ViewBag.Parts as List<CmsPart>;
-                if (parts != null && parts.Any())
+                foreach (var part in Model.CmsContents)
                 {
-                    foreach (var part in parts)
-                    {
-                        @Html.Partial("_PartDetails", part);
-                    }
-                }
-                else
-                {
-                    @:-
+                    @Html.Partial("_ContentDetails", part);
                 }
             }
 
-            @Html.Partial("_PartCreate", new CmsPart(Model.Id))
+            @Html.Partial("_ContentCreate", new CmsContent(Model.Id))
         </dd>
 
     </dl>

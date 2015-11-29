@@ -146,7 +146,6 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseEntityController.cs" />
-    <Compile Include="Controllers\CmsContentsController.cs" />
     <Compile Include="Controllers\CmsPagesController.cs" />
     <Compile Include="Controllers\CmsPartsController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
@@ -171,6 +170,10 @@
     <Compile Include="Migrations\201511291632172_CmsConstraints.Designer.cs">
       <DependentUpon>201511291632172_CmsConstraints.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511291800257_DropCmsPart.cs" />
+    <Compile Include="Migrations\201511291800257_DropCmsPart.Designer.cs">
+      <DependentUpon>201511291800257_DropCmsPart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
@@ -183,9 +186,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\AppUser.cs" />
     <Compile Include="Types\BaseEntity.cs" />
-    <Compile Include="Types\CmsContent.cs" />
     <Compile Include="Types\CmsPage.cs" />
-    <Compile Include="Types\CmsPart.cs" />
+    <Compile Include="Types\CmsContent.cs" />
     <Compile Include="Views\AppViewPage.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,13 +202,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\CmsPages\Index.cshtml" />
-    <Content Include="Views\CmsPages\_PartDetails.cshtml" />
     <Content Include="Views\CmsPages\Details.cshtml" />
     <Content Include="Views\CmsPages\DetailsAddPart.cshtml" />
-    <Content Include="Views\CmsPages\_PartCreate.cshtml" />
-    <Content Include="Views\CmsPages\Edit.cshtml" />
     <Content Include="Views\CmsPages\Create.cshtml" />
     <Content Include="Views\CmsPages\Delete.cshtml" />
+    <Content Include="Views\CmsPages\_ContentCreate.cshtml" />
+    <Content Include="Views\CmsPages\_ContentDetails.cshtml" />
+    <Content Include="Views\CmsPages\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -232,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511291632172_CmsConstraints.resx">
       <DependentUpon>201511291632172_CmsConstraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511291800257_DropCmsPart.resx">
+      <DependentUpon>201511291800257_DropCmsPart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

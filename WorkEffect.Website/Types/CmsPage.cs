@@ -9,5 +9,7 @@ namespace WorkEffect.Website.Types
     public class CmsPage : BaseEntity
     {
         public string Name { get; set; }
+
+        public virtual List<CmsContent> CmsContents { get; set; }
     }
 }

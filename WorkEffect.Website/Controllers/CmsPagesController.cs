@@ -14,40 +14,28 @@ namespace WorkEffect.Website.Controllers
 {
     public class CmsPagesController : BaseEntityController<CmsPage>
     {
-        public override ActionResult Index()
-        {
-            ViewBag.Parts = Context.Parts.ToList();
-
-            return base.Index();
-        }
-
-        public override ActionResult Details(Guid? id)
-        {
-            var parts = Context.Parts.Where(a => a.CmsPageId == id);
-            ViewBag.Parts = parts.ToList();
-
-            return base.Details(id);
-        }
-
         public ActionResult DetailsAddPart(Guid? id)
         {
+            // Use on _PartCreate.cshtml
             ViewBag.PageId = id;
+
             return Details(id);
         }
 
-        public ActionResult CreatePart([Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] CmsPart model)
+        public ActionResult CreateContent([Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] CmsContent model)
         {
             model.Id = Guid.NewGuid();
             model.CmsPageId = model.CmsPageId;
+
             Context.Parts.Add(model);
             Context.SaveChanges();
 
             return RedirectToAction("Details", "CmsPages", new { id = model.CmsPageId });
         }
 
-        public ActionResult DeletePart(Guid? id, Guid? pageId)
+        public ActionResult DeleteContent(Guid? id, Guid? pageId)
         {
-            Context.DeleteById<CmsPart>(id);
+            Context.DeleteById<CmsContent>(id);
 
             return RedirectToAction("Details", "CmsPages", new { id = pageId });
         }
