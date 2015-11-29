@@ -14,6 +14,7 @@ namespace WorkEffect.Website.Views
     public abstract class AppViewPage<TModel> : WebViewPage<TModel>
     {
         protected IIdentity CurrentUser => HttpContext.Current.User.Identity;
+        protected WorkEffectDbContext DbContext => new WorkEffectDbContext();
     }
 
     public abstract class AppViewPage : AppViewPage<dynamic>

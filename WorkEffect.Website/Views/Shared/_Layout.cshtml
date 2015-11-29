@@ -20,19 +20,22 @@
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    @Html.ActionLink("WorkEffect", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("WorkEffect", "Index", "Home", null, new { @class = "navbar-brand" })
                 </li>
                 <li>
-                    @Html.ActionLink("Insights", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Insights", "Index", "Home", null, new { @class = "navbar-brand" })
                 </li>
                 <li>
-                    @Html.ActionLink("Pages", "Index", "CmsPages", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Pages", "Index", "CmsPages", null, new {@class = "navbar-brand"})
                 </li>
                 <li>
-                    @Html.ActionLink("Parts", "Index", "CmsParts", new { area = "" }, new { @class = "navbar-brand" })
+                    |
                 </li>
                 <li>
-                    @Html.ActionLink("Content", "Index", "CmsContent", new { area = "" }, new { @class = "navbar-brand" })
+                    @foreach (var page in DbContext.Pages)
+                    {
+                        @Html.ActionLink(page.Name, "Details", "CmsPages", new { id = page.Id }, new { @class = "navbar-brand" })
+                    }
                 </li>
             </ul>
         </div>
