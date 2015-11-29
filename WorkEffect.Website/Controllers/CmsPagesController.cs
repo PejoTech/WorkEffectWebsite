@@ -35,14 +35,21 @@ namespace WorkEffect.Website.Controllers
             return Details(id);
         }
 
-        public ActionResult CreatePart(Guid? id, [Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] CmsPart model)
+        public ActionResult CreatePart([Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] CmsPart model)
         {
             model.Id = Guid.NewGuid();
             model.CmsPageId = model.CmsPageId;
             Context.Parts.Add(model);
             Context.SaveChanges();
 
-            return RedirectToAction("Details", "CmsPages", new { id });
+            return RedirectToAction("Details", "CmsPages", new { id = model.CmsPageId });
+        }
+
+        public ActionResult DeletePart(Guid? id, Guid? pageId)
+        {
+            Context.DeleteById<CmsPart>(id);
+
+            return RedirectToAction("Details", "CmsPages", new { id = pageId });
         }
     }
 }

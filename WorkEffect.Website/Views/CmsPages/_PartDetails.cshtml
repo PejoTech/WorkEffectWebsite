@@ -8,6 +8,8 @@
 
         <dd>
             @Html.DisplayFor(model => model.CmsPageId)
+            &nbsp;
+            @Html.ActionLink("-", "DeletePart", "CmsPages", new { id = Model.Id, pageId = Model.CmsPageId }, new { @class = "btn btn-default" })
         </dd>
     </dl>
 </div>
