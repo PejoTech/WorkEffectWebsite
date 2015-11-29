@@ -9,7 +9,7 @@ using WorkEffect.Website.Types;
 
 namespace WorkEffect.Website.Data
 {
-    class WorkEffectDbContext : IdentityDbContext<AppUser>
+    public class WorkEffectDbContext : IdentityDbContext<AppUser>
     {
         public DbSet<CmsPage> Pages{ get; set; }
         public DbSet<CmsPart> Parts { get; set; }

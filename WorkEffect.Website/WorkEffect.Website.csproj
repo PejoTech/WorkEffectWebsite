@@ -44,11 +44,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -80,6 +80,7 @@
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
@@ -145,6 +146,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseEntityController.cs" />
+    <Compile Include="Controllers\CmsPagesController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Migrations\201511280120402_InitialCreate.cs" />
@@ -158,6 +160,10 @@
     <Compile Include="Migrations\201511282223428_AddTypesSiteContent.cs" />
     <Compile Include="Migrations\201511282223428_AddTypesSiteContent.Designer.cs">
       <DependentUpon>201511282223428_AddTypesSiteContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511290002430_RenameFieldsOnBase.cs" />
+    <Compile Include="Migrations\201511290002430_RenameFieldsOnBase.Designer.cs">
+      <DependentUpon>201511290002430_RenameFieldsOnBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
@@ -187,6 +193,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Auth\Register.cshtml" />
+    <Content Include="Views\CmsPages\Create.cshtml" />
+    <Content Include="Views\CmsPages\Delete.cshtml" />
+    <Content Include="Views\CmsPages\Details.cshtml" />
+    <Content Include="Views\CmsPages\Edit.cshtml" />
+    <Content Include="Views\CmsPages\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -206,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511282223428_AddTypesSiteContent.resx">
       <DependentUpon>201511282223428_AddTypesSiteContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511290002430_RenameFieldsOnBase.resx">
+      <DependentUpon>201511290002430_RenameFieldsOnBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

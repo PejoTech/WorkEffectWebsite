@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using WorkEffect.Website.Data;
 
 namespace WorkEffect.Website.Controllers
 {
@@ -12,7 +15,9 @@ namespace WorkEffect.Website.Controllers
     {
         public IAuthenticationManager AuthManager => HttpContext.Request.GetOwinContext().Authentication;
 
-        public ActionResult Index()
+        public string UserID => User.Identity.GetUserId();
+
+        public virtual ActionResult Index()
         {
             FetchViewBag();
             return View();
