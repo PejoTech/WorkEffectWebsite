@@ -19,9 +19,9 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
 
-        <td>
+        <dt>
             Parts
-        </td>
+        </dt>
 
         <dd>
             @{
@@ -30,7 +30,7 @@
                 {
                     foreach (var part in parts)
                     {
-                        @Html.Partial("_partials/_PartDetails", part);
+                        @Html.Partial("_PartDetails", part);
                     }
                 }
                 else

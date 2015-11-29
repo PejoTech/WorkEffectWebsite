@@ -33,7 +33,7 @@
                 {
                     foreach (var part in parts.Where(a => a.CmsPageId == item.Id))
                     {
-                        @Html.Partial("_partials/_PartDetails", part);
+                        @Html.Partial("_PartDetails", part);
                     }
                 }
                 else

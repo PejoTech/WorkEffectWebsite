@@ -200,10 +200,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\CmsPages\Index.cshtml" />
-    <Content Include="Views\CmsPages\_partials\_PartDetails.cshtml" />
+    <Content Include="Views\CmsPages\_PartDetails.cshtml" />
     <Content Include="Views\CmsPages\Details.cshtml" />
     <Content Include="Views\CmsPages\DetailsAddPart.cshtml" />
-    <Content Include="Views\CmsPages\_partials\_PartCreate.cshtml" />
+    <Content Include="Views\CmsPages\_PartCreate.cshtml" />
+    <Content Include="Views\CmsPages\Edit.cshtml" />
+    <Content Include="Views\CmsPages\Create.cshtml" />
+    <Content Include="Views\CmsPages\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
