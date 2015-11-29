@@ -13,5 +13,7 @@ namespace WorkEffect.Website.Types
         public Enums.Enums.CmsContentType Type { get; set; }
 
         public string Content { get; set; }
+
+        public Guid PartId { get; set; }
     }
 }

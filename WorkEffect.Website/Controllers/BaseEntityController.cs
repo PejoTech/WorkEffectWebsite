@@ -66,6 +66,24 @@ namespace WorkEffect.Website.Controllers
             return View(entity);
         }
 
+        // POST: CmsPages/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public virtual ActionResult CreatePartial([Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] T entity, string view)
+        {
+            if (ModelState.IsValid)
+            {
+                entity.Id = Guid.NewGuid();
+                Context.Set<T>().Add(entity);
+                Context.SaveChanges();
+                return RedirectToAction(view);
+            }
+
+            return View(entity);
+        }
+
         // GET: CmsPages/Edit/5
         public virtual ActionResult Edit(Guid? id)
         {
@@ -131,19 +149,6 @@ namespace WorkEffect.Website.Controllers
                 Context.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        // TODO: Kill the bastard as soon as possible
-        private T ResetBaseProperties(T entity)
-        {
-            var x = Context.Set<T>().First(a => a.Id == entity.Id);
-
-            entity.CreatedById = x.CreatedById;
-            entity.CreatedOn = x.CreatedOn;
-            entity.UpdatedById = x.UpdatedById;
-            entity.UpdatedOn = x.UpdatedOn;
-
-            return x;
         }
     }
 }

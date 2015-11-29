@@ -88,8 +88,8 @@ namespace WorkEffect.Website.Controllers
 
             var user = new AppUser
             {
-                UserName = model.Email
-                
+                UserName = model.Email,
+                Email = model.Email
             };
 
             var result = await userManager.CreateAsync(user, model.Password);

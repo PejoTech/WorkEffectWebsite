@@ -8,6 +8,16 @@ namespace WorkEffect.Website.Types
 {
     public class CmsPart : BaseEntity
     {
-        public List<int> CmsContentIds { get; set; }
+        public CmsPart()
+        {
+            
+        }
+
+        public CmsPart(Guid pageId)
+        {
+            this.CmsPageId = pageId;
+        }
+
+        public Guid CmsPageId { get; set; }
     }
 }
