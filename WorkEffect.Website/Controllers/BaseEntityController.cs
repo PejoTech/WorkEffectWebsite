@@ -53,14 +53,10 @@ namespace WorkEffect.Website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Create([Bind(Exclude = "Id,Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] T entity)
+        public virtual ActionResult Create([Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] T entity)
         {
             if (ModelState.IsValid)
             {
-                // TODO: Get identity to base entity
-                entity.CreatedById = Guid.Parse(User.Identity.GetUserId());
-                entity.UpdatedById = Guid.Parse(User.Identity.GetUserId());
-
                 entity.Id = Guid.NewGuid();
                 Context.Set<T>().Add(entity);
                 Context.SaveChanges();
@@ -90,11 +86,12 @@ namespace WorkEffect.Website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult Edit([Bind(Exclude = "Id,Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] T entity)
+        public virtual ActionResult Edit([Bind(Exclude = "Deleted,CreatedOn,CreatedById,UpdatedOn,UpdatedById")] T entity)
         {
             if (ModelState.IsValid)
             {
                 Context.Entry(entity).State = EntityState.Modified;
+                
                 Context.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -134,6 +131,19 @@ namespace WorkEffect.Website.Controllers
                 Context.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        // TODO: Kill the bastard as soon as possible
+        private T ResetBaseProperties(T entity)
+        {
+            var x = Context.Set<T>().First(a => a.Id == entity.Id);
+
+            entity.CreatedById = x.CreatedById;
+            entity.CreatedOn = x.CreatedOn;
+            entity.UpdatedById = x.UpdatedById;
+            entity.UpdatedOn = x.UpdatedOn;
+
+            return x;
         }
     }
 }
