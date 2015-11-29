@@ -147,6 +147,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseEntityController.cs" />
     <Compile Include="Controllers\CmsPagesController.cs" />
+    <Compile Include="Controllers\CmsPartsController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Migrations\201511280120402_InitialCreate.cs" />
@@ -195,9 +196,13 @@
     <Content Include="Views\Auth\Register.cshtml" />
     <Content Include="Views\CmsPages\Create.cshtml" />
     <Content Include="Views\CmsPages\Delete.cshtml" />
-    <Content Include="Views\CmsPages\Details.cshtml" />
     <Content Include="Views\CmsPages\Edit.cshtml" />
     <Content Include="Views\CmsPages\Index.cshtml" />
+    <Content Include="Views\CmsParts\Index.cshtml" />
+    <Content Include="Views\CmsParts\Create.cshtml" />
+    <Content Include="Views\CmsParts\Delete.cshtml" />
+    <Content Include="Views\CmsParts\Edit.cshtml" />
+    <Content Include="Views\CmsParts\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
