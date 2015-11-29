@@ -177,6 +177,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\RenderModel.cs" />
     <Compile Include="Services\AppUserClaimsIdentityFactory.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Types\CmsPage.cs" />
     <Compile Include="Types\CmsContent.cs" />
     <Compile Include="Views\AppViewPage.cs" />
+    <Compile Include="Views\HtmlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -206,9 +208,10 @@
     <Content Include="Views\CmsPages\DetailsAddPart.cshtml" />
     <Content Include="Views\CmsPages\Create.cshtml" />
     <Content Include="Views\CmsPages\Delete.cshtml" />
-    <Content Include="Views\CmsPages\_ContentCreate.cshtml" />
-    <Content Include="Views\CmsPages\_ContentDetails.cshtml" />
+    <Content Include="Views\CmsPages\_contentCreate.cshtml" />
+    <Content Include="Views\CmsPages\_contentDetails.cshtml" />
     <Content Include="Views\CmsPages\Edit.cshtml" />
+    <Content Include="Views\CmsPages\_render.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,32 +5,20 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-    </dl>
-    <div class="row">
-        @{
-            foreach (var part in Model.CmsContents)
-            {
-                @Html.Partial("_ContentDetails", part)
-            }
+<div class="row">
+    @{
+        foreach (var part in Model.CmsContents)
+        {
+            @Html.Partial("_contentDetails", part)
         }
+    }
 
-        <a href="@Url.Action("DetailsAddPart", new {id = Model.Id})">
-            <i class="glyphicon glyphicon-plus"></i>
-            <span class="sr-only">Edit</span>
-        </a>
-    </div>
+    <a href="@Url.Action("DetailsAddPart", new {id = Model.Id})">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span class="sr-only">Edit</span>
+    </a>
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
