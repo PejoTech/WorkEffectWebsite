@@ -14,6 +14,8 @@ namespace WorkEffect.Website.Types
 
         public string Content { get; set; }
 
-        public Guid PartId { get; set; }
+        public Guid CmsPartId { get; set; }
+
+        public virtual CmsPart CmsPart { get; set; }
     }
 }

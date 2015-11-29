@@ -7,13 +7,13 @@ namespace WorkEffect.Website.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class WeakConstraints : IMigrationMetadata
+    public sealed partial class CmsConstraints : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(WeakConstraints));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CmsConstraints));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511291217573_WeakConstraints"; }
+            get { return "201511291632172_CmsConstraints"; }
         }
         
         string IMigrationMetadata.Source

@@ -167,9 +167,9 @@
     <Compile Include="Migrations\201511290002430_RenameFieldsOnBase.Designer.cs">
       <DependentUpon>201511290002430_RenameFieldsOnBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511291217573_WeakConstraints.cs" />
-    <Compile Include="Migrations\201511291217573_WeakConstraints.Designer.cs">
-      <DependentUpon>201511291217573_WeakConstraints.cs</DependentUpon>
+    <Compile Include="Migrations\201511291632172_CmsConstraints.cs" />
+    <Compile Include="Migrations\201511291632172_CmsConstraints.Designer.cs">
+      <DependentUpon>201511291632172_CmsConstraints.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
@@ -230,8 +230,8 @@
     <EmbeddedResource Include="Migrations\201511290002430_RenameFieldsOnBase.resx">
       <DependentUpon>201511290002430_RenameFieldsOnBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511291217573_WeakConstraints.resx">
-      <DependentUpon>201511291217573_WeakConstraints.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511291632172_CmsConstraints.resx">
+      <DependentUpon>201511291632172_CmsConstraints.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

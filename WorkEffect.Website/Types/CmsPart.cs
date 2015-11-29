@@ -8,10 +8,7 @@ namespace WorkEffect.Website.Types
 {
     public class CmsPart : BaseEntity
     {
-        public CmsPart()
-        {
-            
-        }
+        public CmsPart() { }
 
         public CmsPart(Guid pageId)
         {
@@ -19,5 +16,7 @@ namespace WorkEffect.Website.Types
         }
 
         public Guid CmsPageId { get; set; }
+
+        public virtual CmsPage CmsPage { get; set; }
     }
 }
