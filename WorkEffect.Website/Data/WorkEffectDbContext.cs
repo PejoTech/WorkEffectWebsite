@@ -13,9 +13,6 @@ namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : IdentityDbContext<AppUser>
     {
-        public DbSet<CmsPage> Pages{ get; set; }
-        public DbSet<CmsContent> Parts { get; set; }
-
         public WorkEffectDbContext()
             : base("DefaultConnection")
         {

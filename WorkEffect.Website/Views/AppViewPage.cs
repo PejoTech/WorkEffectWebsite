@@ -15,7 +15,6 @@ namespace WorkEffect.Website.Views
     public abstract class AppViewPage<TModel> : WebViewPage<TModel>
     {
         protected IIdentity CurrentUser => HttpContext.Current.User.Identity;
-        protected List<NavigationInfoModel> NavPages => new WorkEffectDbContext().Pages.Where(a => !a.Deleted).Select(a => new NavigationInfoModel { Name = a.Name, Id = a.Id}).ToList();
     }
 
     public abstract class AppViewPage : AppViewPage<dynamic>

@@ -148,34 +148,6 @@
     <Compile Include="Controllers\BaseEntityController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
-    <Compile Include="Migrations\201511280120402_InitialCreate.cs" />
-    <Compile Include="Migrations\201511280120402_InitialCreate.Designer.cs">
-      <DependentUpon>201511280120402_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511281952563_DropColumnCountry.cs" />
-    <Compile Include="Migrations\201511281952563_DropColumnCountry.Designer.cs">
-      <DependentUpon>201511281952563_DropColumnCountry.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511282223428_AddTypesSiteContent.cs" />
-    <Compile Include="Migrations\201511282223428_AddTypesSiteContent.Designer.cs">
-      <DependentUpon>201511282223428_AddTypesSiteContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511290002430_RenameFieldsOnBase.cs" />
-    <Compile Include="Migrations\201511290002430_RenameFieldsOnBase.Designer.cs">
-      <DependentUpon>201511290002430_RenameFieldsOnBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511291632172_CmsConstraints.cs" />
-    <Compile Include="Migrations\201511291632172_CmsConstraints.Designer.cs">
-      <DependentUpon>201511291632172_CmsConstraints.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511291800257_DropCmsPart.cs" />
-    <Compile Include="Migrations\201511291800257_DropCmsPart.Designer.cs">
-      <DependentUpon>201511291800257_DropCmsPart.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511300027209_AddOrderIndex.cs" />
-    <Compile Include="Migrations\201511300027209_AddOrderIndex.Designer.cs">
-      <DependentUpon>201511300027209_AddOrderIndex.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\NavigationInfoModel.cs" />
@@ -190,8 +162,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\AppUser.cs" />
     <Compile Include="Types\BaseEntity.cs" />
-    <Compile Include="Types\CmsPage.cs" />
-    <Compile Include="Types\CmsContent.cs" />
+    <Compile Include="Types\ContentPage.cs" />
+    <Compile Include="Types\ContentGrid.cs" />
+    <Compile Include="Types\ContentPart.cs" />
+    <Compile Include="Types\ContentResource.cs" />
     <Compile Include="Views\AppViewPage.cs" />
     <Compile Include="Views\HtmlExtensions.cs" />
   </ItemGroup>
@@ -217,29 +191,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CmsPages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201511280120402_InitialCreate.resx">
-      <DependentUpon>201511280120402_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511281952563_DropColumnCountry.resx">
-      <DependentUpon>201511281952563_DropColumnCountry.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511282223428_AddTypesSiteContent.resx">
-      <DependentUpon>201511282223428_AddTypesSiteContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511290002430_RenameFieldsOnBase.resx">
-      <DependentUpon>201511290002430_RenameFieldsOnBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511291632172_CmsConstraints.resx">
-      <DependentUpon>201511291632172_CmsConstraints.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511291800257_DropCmsPart.resx">
-      <DependentUpon>201511291800257_DropCmsPart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511300027209_AddOrderIndex.resx">
-      <DependentUpon>201511300027209_AddOrderIndex.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

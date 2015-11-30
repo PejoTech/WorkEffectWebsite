@@ -26,16 +26,11 @@
                     @Html.ActionLink("Insights", "Index", "Home", null, new { @class = "navbar-brand" })
                 </li>
                 <li>
-                    @Html.ActionLink("Pages", "Index", "CmsPages", null, new {@class = "navbar-brand"})
                 </li>
                 <li>
                     |
                 </li>
                 <li>
-                    @foreach (var page in NavPages)
-                    {
-                        @Html.ActionLink(page.Name, "Details", "CmsPages", new { id = page.Id }, new { @class = "navbar-brand" })
-                    }
                 </li>
             </ul>
         </div>
