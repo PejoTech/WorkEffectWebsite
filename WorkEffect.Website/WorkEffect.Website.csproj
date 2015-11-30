@@ -148,6 +148,10 @@
     <Compile Include="Controllers\BaseEntityController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Migrations\201511302218299_AddBaseCmsTypes.cs" />
+    <Compile Include="Migrations\201511302218299_AddBaseCmsTypes.Designer.cs">
+      <DependentUpon>201511302218299_AddBaseCmsTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\NavigationInfoModel.cs" />
@@ -162,10 +166,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Data\AppUser.cs" />
     <Compile Include="Types\BaseEntity.cs" />
-    <Compile Include="Types\ContentPage.cs" />
-    <Compile Include="Types\ContentGrid.cs" />
-    <Compile Include="Types\ContentPart.cs" />
-    <Compile Include="Types\ContentResource.cs" />
+    <Compile Include="Types\BaseEntityHtml.cs" />
+    <Compile Include="Types\CmsCell.cs" />
+    <Compile Include="Types\CmsGrid.cs" />
+    <Compile Include="Types\CmsPage.cs" />
+    <Compile Include="Types\CmsPart.cs" />
+    <Compile Include="Types\CmsResource.cs" />
+    <Compile Include="Types\CmsRow.cs" />
     <Compile Include="Views\AppViewPage.cs" />
     <Compile Include="Views\HtmlExtensions.cs" />
   </ItemGroup>
@@ -191,6 +198,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CmsPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201511302218299_AddBaseCmsTypes.resx">
+      <DependentUpon>201511302218299_AddBaseCmsTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

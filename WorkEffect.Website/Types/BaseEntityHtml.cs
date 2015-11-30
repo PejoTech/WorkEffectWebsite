@@ -7,11 +7,15 @@ using System.Threading.Tasks;
 
 namespace WorkEffect.Website.Types
 {
-    public class ContentResource : BaseEntity
+    public class BaseEntityHtml : BaseEntity
     {
-        public Guid PartId { get; set; }
+        [MaxLength(12500)]
+        public string Html { get; set; }
 
         [MaxLength(12500)]
-        public string Text { get; set; }
+        public string Css { get; set; }
+
+        [MaxLength(12500)]
+        public string JavaScript { get; set; }
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace WorkEffect.Website.Types
 {
-    public class ContentPage : BaseEntity
+    public class CmsCell : BaseEntityHtml
     {
-        public Guid GridID { get; set; }
+        public Guid CmsRowId { get; set; }
     }
 }
