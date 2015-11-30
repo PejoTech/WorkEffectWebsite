@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,18 @@ namespace WorkEffect.Website.Types
     {
         public CmsContent() { }
 
-        public CmsContent(Guid pageId)
+        public CmsContent(Guid pageId, int index)
         {
             this.CmsPageId = pageId;
+            this.Index = index;
         }
 
         [Required]
+        [Index(IsUnique = true)]
         public Guid CmsPageId { get; set; }
+
+        [Required]
+        public int Index { get; set; }
 
         [Required]
         public Enums.Enums.CmsContentType Type { get; set; }

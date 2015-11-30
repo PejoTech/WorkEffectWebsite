@@ -7,14 +7,14 @@
 
 <div class="row">
     @{
-        foreach (var part in Model.CmsContents)
+        foreach (var part in Model.CmsContents.OrderBy(a => a.Index))
         {
             @Html.Partial("_contentDetails", part)
             ;
         }
     }
 
-    @Html.Partial("_ContentCreate", new CmsContent(Model.Id))  
+    @Html.Partial("_ContentCreate", new CmsContent(Model.Id, NavPages.Count + 1))  
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

@@ -174,8 +174,13 @@
     <Compile Include="Migrations\201511291800257_DropCmsPart.Designer.cs">
       <DependentUpon>201511291800257_DropCmsPart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511300027209_AddOrderIndex.cs" />
+    <Compile Include="Migrations\201511300027209_AddOrderIndex.Designer.cs">
+      <DependentUpon>201511300027209_AddOrderIndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
+    <Compile Include="Models\NavigationInfoModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\RenderModel.cs" />
     <Compile Include="Services\AppUserClaimsIdentityFactory.cs" />
@@ -211,7 +216,7 @@
     <Content Include="Views\CmsPages\_contentCreate.cshtml" />
     <Content Include="Views\CmsPages\_contentDetails.cshtml" />
     <Content Include="Views\CmsPages\Edit.cshtml" />
-    <Content Include="Views\CmsPages\_render.cshtml" />
+    <Content Include="Views\Shared\_render.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -240,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511291800257_DropCmsPart.resx">
       <DependentUpon>201511291800257_DropCmsPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511300027209_AddOrderIndex.resx">
+      <DependentUpon>201511300027209_AddOrderIndex.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
