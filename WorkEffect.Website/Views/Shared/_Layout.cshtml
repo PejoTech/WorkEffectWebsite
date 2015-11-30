@@ -32,7 +32,7 @@
                     |
                 </li>
                 <li>
-                    @foreach (var page in DbContext.Pages)
+                    @foreach (var page in NavPages)
                     {
                         @Html.ActionLink(page.Name, "Details", "CmsPages", new { id = page.Id }, new { @class = "navbar-brand" })
                     }
