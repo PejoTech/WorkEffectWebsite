@@ -146,8 +146,6 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BaseEntityController.cs" />
-    <Compile Include="Controllers\CmsPagesController.cs" />
-    <Compile Include="Controllers\CmsPartsController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Migrations\201511280120402_InitialCreate.cs" />
@@ -208,14 +206,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Auth\Register.cshtml" />
-    <Content Include="Views\CmsPages\Index.cshtml" />
-    <Content Include="Views\CmsPages\Details.cshtml" />
-    <Content Include="Views\CmsPages\DetailsAddPart.cshtml" />
-    <Content Include="Views\CmsPages\Create.cshtml" />
-    <Content Include="Views\CmsPages\Delete.cshtml" />
-    <Content Include="Views\CmsPages\_contentCreate.cshtml" />
-    <Content Include="Views\CmsPages\_contentDetails.cshtml" />
-    <Content Include="Views\CmsPages\Edit.cshtml" />
     <Content Include="Views\Shared\_render.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -226,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CmsPages\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511280120402_InitialCreate.resx">

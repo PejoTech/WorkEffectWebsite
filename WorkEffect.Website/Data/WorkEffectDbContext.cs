@@ -41,12 +41,5 @@ namespace WorkEffect.Website.Data
 
             return base.SaveChanges();
         }
-
-        public void DeleteById<T>(Guid? id) where T : BaseEntity
-        {
-            var entity = Set<T>().First(a => a.Id == id);
-            Set<T>().Remove(entity);
-            SaveChanges();
-        }
     }
 }
