@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using WorkEffect.Website.Types;
 
@@ -13,6 +8,8 @@ namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : IdentityDbContext<AppUser>
     {
+        public Guid SystemGuid { get; } = Guid.Parse("67DDEA4E-4E01-4736-A971-3D3106CF61B7");
+
         public DbSet<CmsPage> CmsPages{ get; set; }
         public DbSet<CmsGrid> CmsGrids { get; set; }
         public DbSet<CmsRow> CmsRows { get; set; }
@@ -27,20 +24,22 @@ namespace WorkEffect.Website.Data
 
         public override int SaveChanges()
         {
-            var entities = ChangeTracker.Entries().Where(c => c.State != EntityState.Modified).Select(a => a.Entity as BaseEntity);
+            var entities = ChangeTracker.Entries().Where(c => c.State != EntityState.Modified || c.State != EntityState.Added);
 
             foreach (var entity in entities)
             {
-                entity.UpdatedById = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
-                entity.UpdatedOn = DateTime.UtcNow;
-            }
+                var baseEntity = entity.Entity as BaseEntity;
 
-            var newEntities = ChangeTracker.Entries().Where(c => c.State != EntityState.Modified).Select(a => a.Entity as BaseEntity);
-
-            foreach (var entity in newEntities)
-            {
-                entity.CreatedById = Guid.Parse(HttpContext.Current.User.Identity.GetUserId());
-                entity.CreatedOn = DateTime.UtcNow;
+                if (entity.State == EntityState.Modified)
+                {
+                    baseEntity.UpdatedById = SystemGuid;
+                    baseEntity.UpdatedOn = DateTime.UtcNow;
+                }
+                else
+                {
+                    baseEntity.CreatedById = SystemGuid;
+                    baseEntity.CreatedOn = DateTime.UtcNow;
+                }
             }
 
             return base.SaveChanges();

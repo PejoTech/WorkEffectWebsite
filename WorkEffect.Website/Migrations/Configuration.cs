@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
 using WorkEffect.Website.Controllers;
 using WorkEffect.Website.Data;
 using WorkEffect.Website.Models;
@@ -24,11 +27,18 @@ namespace WorkEffect.Website.Migrations
 
         protected override void Seed(WorkEffect.Website.Data.WorkEffectDbContext context)
         {
-            var page = new CmsPage
+            if (!context.Users.Any())
             {
-                CmsGrid = new CmsGrid
+                CreateUsers(context);
+            }
+
+            if (context.Users.Any())
+            {
+                var page = new CmsPage
                 {
-                    CmsRows = new List<CmsRow>
+                    CmsGrid = new CmsGrid
+                    {
+                        CmsRows = new List<CmsRow>
                     {
                         new CmsRow
                         {
@@ -42,7 +52,10 @@ namespace WorkEffect.Website.Migrations
                                         {
                                             CmsResources = new List<CmsResource>
                                             {
-
+                                                new CmsResource
+                                                {
+                                                    Text = "Bla"
+                                                }
                                             }
                                         }
                                     }
@@ -50,10 +63,30 @@ namespace WorkEffect.Website.Migrations
                             }
                         }
                     }
-                }
-            };
+                    }
+                };
 
-            context.CmsPages.Add(page);
+                context.CmsPages.Add(page);
+            }
+        }
+
+        private static void CreateUsers(WorkEffectDbContext context)
+        {
+            var initialAdminUserId = new Guid();
+
+            if (Debugger.IsAttached == false)
+                Debugger.Launch();
+
+            var pwHash = new PasswordHasher();
+            var password = pwHash.HashPassword("123456");
+
+            context.Users.Add(new AppUser
+            {
+                Id = initialAdminUserId.ToString(),
+                UserName = "Admin",
+                Email = "asd@asd.ch",
+                PasswordHash = password
+            });
         }
     }
 }
