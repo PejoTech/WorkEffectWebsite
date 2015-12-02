@@ -27,25 +27,6 @@ namespace WorkEffect.Website.Migrations
                 .Index(t => t.CmsRowId);
             
             CreateTable(
-                "dbo.CmsGrids",
-                c => new
-                    {
-                        Id = c.Guid(nullable: false),
-                        Html = c.String(),
-                        Css = c.String(),
-                        JavaScript = c.String(),
-                        Deleted = c.Boolean(nullable: false),
-                        CreatedOn = c.DateTime(nullable: false),
-                        CreatedById = c.Guid(nullable: false),
-                        UpdatedOn = c.DateTime(nullable: false),
-                        UpdatedById = c.Guid(nullable: false),
-                        CmsGridId = c.Guid(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.CmsGrids", t => t.CmsGridId)
-                .Index(t => t.CmsGridId);
-            
-            CreateTable(
                 "dbo.CmsParts",
                 c => new
                     {
@@ -61,25 +42,33 @@ namespace WorkEffect.Website.Migrations
                         CreatedById = c.Guid(nullable: false),
                         UpdatedOn = c.DateTime(nullable: false),
                         UpdatedById = c.Guid(nullable: false),
+                        CmsCellId = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
-                .Index(t => t.Index, unique: true);
+                .ForeignKey("dbo.CmsCells", t => t.CmsCellId)
+                .Index(t => t.Index, unique: true)
+                .Index(t => t.CmsCellId);
             
             CreateTable(
-                "dbo.CmsResources",
+                "dbo.CmsGrids",
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        CmsPartId = c.Guid(nullable: false),
-                        Text = c.String(),
+                        Html = c.String(),
+                        Css = c.String(),
+                        JavaScript = c.String(),
                         Deleted = c.Boolean(nullable: false),
                         CreatedOn = c.DateTime(nullable: false),
                         CreatedById = c.Guid(nullable: false),
                         UpdatedOn = c.DateTime(nullable: false),
                         UpdatedById = c.Guid(nullable: false),
+                        CmsGridId = c.Guid(),
+                        CmsPartId = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.CmsParts", t => t.CmsPartId, cascadeDelete: true)
+                .ForeignKey("dbo.CmsGrids", t => t.CmsGridId)
+                .ForeignKey("dbo.CmsParts", t => t.CmsPartId)
+                .Index(t => t.CmsGridId)
                 .Index(t => t.CmsPartId);
             
             CreateTable(
@@ -101,6 +90,23 @@ namespace WorkEffect.Website.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.CmsGrids", t => t.CmsGridId)
                 .Index(t => t.CmsGridId);
+            
+            CreateTable(
+                "dbo.CmsResources",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        CmsPartId = c.Guid(nullable: false),
+                        Text = c.String(),
+                        Deleted = c.Boolean(nullable: false),
+                        CreatedOn = c.DateTime(nullable: false),
+                        CreatedById = c.Guid(nullable: false),
+                        UpdatedOn = c.DateTime(nullable: false),
+                        UpdatedById = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.CmsParts", t => t.CmsPartId, cascadeDelete: true)
+                .Index(t => t.CmsPartId);
             
             CreateTable(
                 "dbo.CmsPages",
@@ -188,19 +194,6 @@ namespace WorkEffect.Website.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId);
             
-            CreateTable(
-                "dbo.CmsPartCmsGrids",
-                c => new
-                    {
-                        CmsPartId = c.Guid(nullable: false),
-                        CmsGridId = c.Guid(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.CmsPartId, t.CmsGridId })
-                .ForeignKey("dbo.CmsParts", t => t.CmsPartId, cascadeDelete: true)
-                .ForeignKey("dbo.CmsGrids", t => t.CmsGridId, cascadeDelete: true)
-                .Index(t => t.CmsPartId)
-                .Index(t => t.CmsGridId);
-            
         }
         
         public override void Down()
@@ -209,36 +202,35 @@ namespace WorkEffect.Website.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.CmsParts", "CmsCellId", "dbo.CmsCells");
+            DropForeignKey("dbo.CmsResources", "CmsPartId", "dbo.CmsParts");
+            DropForeignKey("dbo.CmsGrids", "CmsPartId", "dbo.CmsParts");
             DropForeignKey("dbo.CmsRows", "CmsGridId", "dbo.CmsGrids");
             DropForeignKey("dbo.CmsCells", "CmsRowId", "dbo.CmsRows");
-            DropForeignKey("dbo.CmsResources", "CmsPartId", "dbo.CmsParts");
-            DropForeignKey("dbo.CmsPartCmsGrids", "CmsGridId", "dbo.CmsGrids");
-            DropForeignKey("dbo.CmsPartCmsGrids", "CmsPart_Id", "dbo.CmsParts");
             DropForeignKey("dbo.CmsGrids", "CmsGridId", "dbo.CmsGrids");
-            DropIndex("dbo.CmsPartCmsGrids", new[] { "CmsGridId" });
-            DropIndex("dbo.CmsPartCmsGrids", new[] { "CmsPart_Id" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
-            DropIndex("dbo.CmsRows", new[] { "CmsGridId" });
             DropIndex("dbo.CmsResources", new[] { "CmsPartId" });
-            DropIndex("dbo.CmsParts", new[] { "Index" });
+            DropIndex("dbo.CmsRows", new[] { "CmsGridId" });
+            DropIndex("dbo.CmsGrids", new[] { "CmsPartId" });
             DropIndex("dbo.CmsGrids", new[] { "CmsGridId" });
+            DropIndex("dbo.CmsParts", new[] { "CmsCellId" });
+            DropIndex("dbo.CmsParts", new[] { "Index" });
             DropIndex("dbo.CmsCells", new[] { "CmsRowId" });
-            DropTable("dbo.CmsPartCmsGrids");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.CmsPages");
-            DropTable("dbo.CmsRows");
             DropTable("dbo.CmsResources");
-            DropTable("dbo.CmsParts");
+            DropTable("dbo.CmsRows");
             DropTable("dbo.CmsGrids");
+            DropTable("dbo.CmsParts");
             DropTable("dbo.CmsCells");
         }
     }
