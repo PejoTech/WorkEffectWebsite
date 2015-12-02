@@ -7,7 +7,7 @@ namespace WorkEffect.Website.Types
     {
         public virtual List<CmsGrid> CmsGrids { get; set; }
 
-        public virtual List<Guid> CmsGridIds { get; set; }
+        public virtual Guid CmsGridId { get; set; }
 
         public virtual List<CmsRow> CmsRows { get; set; }
     }

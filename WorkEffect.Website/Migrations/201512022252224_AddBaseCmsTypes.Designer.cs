@@ -13,7 +13,7 @@ namespace WorkEffect.Website.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201512020113358_AddBaseCmsTypes"; }
+            get { return "201512022252224_AddBaseCmsTypes"; }
         }
         
         string IMigrationMetadata.Source

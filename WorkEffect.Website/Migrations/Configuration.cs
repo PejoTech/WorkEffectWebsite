@@ -27,18 +27,15 @@ namespace WorkEffect.Website.Migrations
 
         protected override void Seed(WorkEffect.Website.Data.WorkEffectDbContext context)
         {
-            if (!context.Users.Any())
-            {
-                CreateUsers(context);
-            }
+            //if (Debugger.IsAttached == false)
+            //    Debugger.Launch();
 
-            if (context.Users.Any())
+            var page = new CmsPage
             {
-                var page = new CmsPage
+                Name = "Init",
+                CmsGrid = new CmsGrid
                 {
-                    CmsGrid = new CmsGrid
-                    {
-                        CmsRows = new List<CmsRow>
+                    CmsRows = new List<CmsRow>
                     {
                         new CmsRow
                         {
@@ -50,6 +47,7 @@ namespace WorkEffect.Website.Migrations
                                     {
                                         new CmsPart
                                         {
+                                            Name = "Init",
                                             CmsResources = new List<CmsResource>
                                             {
                                                 new CmsResource
@@ -63,30 +61,10 @@ namespace WorkEffect.Website.Migrations
                             }
                         }
                     }
-                    }
-                };
+                }
+            };
 
-                context.CmsPages.Add(page);
-            }
-        }
-
-        private static void CreateUsers(WorkEffectDbContext context)
-        {
-            var initialAdminUserId = new Guid();
-
-            if (Debugger.IsAttached == false)
-                Debugger.Launch();
-
-            var pwHash = new PasswordHasher();
-            var password = pwHash.HashPassword("123456");
-
-            context.Users.Add(new AppUser
-            {
-                Id = initialAdminUserId.ToString(),
-                UserName = "Admin",
-                Email = "asd@asd.ch",
-                PasswordHash = password
-            });
+            context.CmsPages.Add(page);
         }
     }
 }

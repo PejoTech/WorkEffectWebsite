@@ -8,7 +8,7 @@ namespace WorkEffect.Website.Types
 {
     public class CmsRow : BaseEntityHtml
     {
-        public Guid GridId { get; set; }
+        public Guid CmsGridId { get; set; }
 
         public virtual List<CmsCell> CmsCells { get; set; }
 }

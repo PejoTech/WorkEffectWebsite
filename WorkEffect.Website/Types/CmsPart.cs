@@ -11,9 +11,7 @@ namespace WorkEffect.Website.Types
 {
     public class CmsPart : BaseEntityHtml
     {
-        public virtual List<CmsGrid> CmsGrids { get; set; }
-
-        public virtual List<Guid> CmsGridIds { get; set; }
+        public Guid CmsCellId { get; set; }
 
         public virtual List<CmsResource> CmsResources { get; set; }
 
@@ -23,5 +21,8 @@ namespace WorkEffect.Website.Types
         public Enums.Enums.CmsContentType ContentType { get; set; }
 
         public bool Hidden { get; set; }
+
+        [MaxLength(160)]
+        public string Name { get; set; }
     }
 }
