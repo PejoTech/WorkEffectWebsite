@@ -9,9 +9,7 @@ namespace WorkEffect.Website.Types
 {
     public class CmsResource : BaseEntity
     {
-        public Guid CmsPartId { get; set; }
-
         [MaxLength(12500)]
-        public string Text { get; set; }
+        public string Content { get; set; }
     }
 }

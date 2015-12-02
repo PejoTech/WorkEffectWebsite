@@ -7,13 +7,13 @@ namespace WorkEffect.Website.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddBaseCmsTypes : IMigrationMetadata
+    public sealed partial class AddCmsBaseTypes : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBaseCmsTypes));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCmsBaseTypes));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512022252224_AddBaseCmsTypes"; }
+            get { return "201512022320533_AddCmsBaseTypes"; }
         }
         
         string IMigrationMetadata.Source

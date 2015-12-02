@@ -9,12 +9,15 @@ using System.Web;
 using System.Web.Mvc;
 using WorkEffect.Website.Data;
 using WorkEffect.Website.Models;
+using WorkEffect.Website.Types;
 
 namespace WorkEffect.Website.Views
 {
     public abstract class AppViewPage<TModel> : WebViewPage<TModel>
     {
         protected IIdentity CurrentUser => HttpContext.Current.User.Identity;
+
+        protected WorkEffectDbContext DbContext = new WorkEffectDbContext();
     }
 
     public abstract class AppViewPage : AppViewPage<dynamic>

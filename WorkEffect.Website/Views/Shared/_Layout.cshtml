@@ -23,13 +23,14 @@
                     @Html.ActionLink("WorkEffect", "Index", "Home", null, new { @class = "navbar-brand" })
                 </li>
                 <li>
-                    @Html.ActionLink("Insights", "Index", "Home", null, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Insights", "Index", "Home", null, new {@class = "navbar-brand"})
                 </li>
-                <li>
-                </li>
-                <li>
-                    |
-                </li>
+                <li>|</li>
+                @foreach (var page in DbContext.CmsPages.Where(a => !a.Deleted))
+                {
+                    <li>
+                    </li>
+                }
                 <li>
                 </li>
             </ul>

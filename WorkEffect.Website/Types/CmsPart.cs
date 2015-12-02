@@ -13,7 +13,7 @@ namespace WorkEffect.Website.Types
     {
         public Guid CmsCellId { get; set; }
 
-        public virtual List<CmsResource> CmsResources { get; set; }
+        public virtual CmsResource CmsResource { get; set; }
 
         [Index(IsUnique = true)]
         public int Index { get; set; }

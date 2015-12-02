@@ -148,9 +148,9 @@
     <Compile Include="Controllers\BaseEntityController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
-    <Compile Include="Migrations\201512022252224_AddBaseCmsTypes.cs" />
-    <Compile Include="Migrations\201512022252224_AddBaseCmsTypes.Designer.cs">
-      <DependentUpon>201512022252224_AddBaseCmsTypes.cs</DependentUpon>
+    <Compile Include="Migrations\201512022320533_AddCmsBaseTypes.cs" />
+    <Compile Include="Migrations\201512022320533_AddCmsBaseTypes.Designer.cs">
+      <DependentUpon>201512022320533_AddCmsBaseTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
@@ -200,8 +200,8 @@
     <Folder Include="Views\CmsPages\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512022252224_AddBaseCmsTypes.resx">
-      <DependentUpon>201512022252224_AddBaseCmsTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512022320533_AddCmsBaseTypes.resx">
+      <DependentUpon>201512022320533_AddCmsBaseTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

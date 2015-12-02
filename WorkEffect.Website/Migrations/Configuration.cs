@@ -48,12 +48,9 @@ namespace WorkEffect.Website.Migrations
                                         new CmsPart
                                         {
                                             Name = "Init",
-                                            CmsResources = new List<CmsResource>
+                                            CmsResource = new CmsResource
                                             {
-                                                new CmsResource
-                                                {
-                                                    Text = "Bla"
-                                                }
+                                                Content = "Bla"
                                             }
                                         }
                                     }
