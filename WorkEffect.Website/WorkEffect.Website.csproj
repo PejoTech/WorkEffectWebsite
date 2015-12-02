@@ -148,6 +148,10 @@
     <Compile Include="Controllers\BaseEntityController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Migrations\201512020113358_AddBaseCmsTypes.cs" />
+    <Compile Include="Migrations\201512020113358_AddBaseCmsTypes.Designer.cs">
+      <DependentUpon>201512020113358_AddBaseCmsTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\NavigationInfoModel.cs" />
@@ -194,6 +198,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\CmsPages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512020113358_AddBaseCmsTypes.resx">
+      <DependentUpon>201512020113358_AddBaseCmsTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

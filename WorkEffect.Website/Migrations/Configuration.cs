@@ -1,3 +1,12 @@
+using System.Collections.Generic;
+using System.Web;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using WorkEffect.Website.Controllers;
+using WorkEffect.Website.Data;
+using WorkEffect.Website.Models;
+using WorkEffect.Website.Types;
+
 namespace WorkEffect.Website.Migrations
 {
     using System;
@@ -15,18 +24,36 @@ namespace WorkEffect.Website.Migrations
 
         protected override void Seed(WorkEffect.Website.Data.WorkEffectDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var page = new CmsPage
+            {
+                CmsGrid = new CmsGrid
+                {
+                    CmsRows = new List<CmsRow>
+                    {
+                        new CmsRow
+                        {
+                            CmsCells = new List<CmsCell>
+                            {
+                                new CmsCell
+                                {
+                                    CmsParts = new List<CmsPart>
+                                    {
+                                        new CmsPart
+                                        {
+                                            CmsResources = new List<CmsResource>
+                                            {
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            context.CmsPages.Add(page);
         }
     }
 }

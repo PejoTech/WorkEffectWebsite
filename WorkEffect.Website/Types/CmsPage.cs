@@ -8,6 +8,6 @@ namespace WorkEffect.Website.Types
 {
     public class CmsPage : BaseEntityHtml
     {
-        public Guid CmsGridID { get; set; }
+        public virtual CmsGrid CmsGrid { get; set; }
     }
 }

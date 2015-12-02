@@ -113,7 +113,6 @@ namespace WorkEffect.Website.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        CmsGridID = c.Guid(nullable: false),
                         Html = c.String(),
                         Css = c.String(),
                         JavaScript = c.String(),
@@ -122,8 +121,11 @@ namespace WorkEffect.Website.Migrations
                         CreatedById = c.Guid(nullable: false),
                         UpdatedOn = c.DateTime(nullable: false),
                         UpdatedById = c.Guid(nullable: false),
+                        CmsGridId = c.Guid(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.CmsGrids", t => t.CmsGridId)
+                .Index(t => t.CmsGridId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -202,6 +204,7 @@ namespace WorkEffect.Website.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.CmsPages", "CmsGridId", "dbo.CmsGrids");
             DropForeignKey("dbo.CmsParts", "CmsCellId", "dbo.CmsCells");
             DropForeignKey("dbo.CmsResources", "CmsPartId", "dbo.CmsParts");
             DropForeignKey("dbo.CmsGrids", "CmsPartId", "dbo.CmsParts");
@@ -214,6 +217,7 @@ namespace WorkEffect.Website.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.CmsPages", new[] { "CmsGridId" });
             DropIndex("dbo.CmsResources", new[] { "CmsPartId" });
             DropIndex("dbo.CmsRows", new[] { "CmsGridId" });
             DropIndex("dbo.CmsGrids", new[] { "CmsPartId" });
