@@ -27,6 +27,7 @@ namespace WorkEffect.Website.Controllers
         // GET: 
         public async Task<ActionResult> Details(int? id)
         {
+            await base.PopulateViewBag();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -51,7 +52,7 @@ namespace WorkEffect.Website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Order")] T section)
+        public async Task<ActionResult> Create([Bind(Include = "Name,Order")] T section)
         {
             if (ModelState.IsValid)
             {
@@ -64,8 +65,9 @@ namespace WorkEffect.Website.Controllers
         }
 
         // GET: 
-        public async Task<ActionResult> Edit(int? id)
+        public virtual async Task<ActionResult> Edit(int? id)
         {
+            await base.PopulateViewBag();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -83,7 +85,7 @@ namespace WorkEffect.Website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Order")] T entity)
+        public async Task<ActionResult> Edit([Bind(Include = "Name,Order")] T entity)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +99,7 @@ namespace WorkEffect.Website.Controllers
         // GET: 
         public async Task<ActionResult> Delete(int? id)
         {
+            await base.PopulateViewBag();
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
