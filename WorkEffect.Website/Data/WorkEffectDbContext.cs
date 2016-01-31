@@ -13,11 +13,14 @@ namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : DbContext
     {
-        static readonly SQLiteConnection connection = new SQLiteConnection(@"Data Source=.\AppData\WorkEffect.sqlite");
+        private static readonly string _fileName = @"C:\Users\peter_000\Documents\Visual Studio 2015\Projects\WorkEffect\WorkEffect.Website\App_Data\WorkEffect.sqlite";
 
-        public WorkEffectDbContext() : base("name=MyDbCS")
+        public WorkEffectDbContext() 
+            : base(new SQLiteConnection() { ConnectionString =
+            new SQLiteConnectionStringBuilder()
+                { DataSource = _fileName, ForeignKeys = true }
+            .ConnectionString }, true)
         {
-            
         }
         
         public DbSet<Section> Sections { get; set; }
