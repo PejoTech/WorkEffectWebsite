@@ -17,8 +17,10 @@ namespace WorkEffect.Website.Controllers
     public class BaseEntityController<T> : BaseController where T : BaseEntity, new()
     {
         // GET: 
-        public async Task<ActionResult> Index()
+        public override async Task<ActionResult> Index()
         {
+            await base.PopulateViewBag();
+
             return View(await Context.Set<T>().ToListAsync());
         }
 
@@ -38,8 +40,9 @@ namespace WorkEffect.Website.Controllers
         }
 
         // GET: 
-        public ActionResult Create()
+        public virtual async Task<ActionResult> Create()
         {
+            await base.PopulateViewBag();
             return View();
         }
 

@@ -9,7 +9,7 @@ namespace WorkEffect.Website
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/grayscale").Include(
-                        "~/Scripts/grayscale.js.js"));
+                        "~/Scripts/grayscale.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
