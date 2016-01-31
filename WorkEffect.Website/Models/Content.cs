@@ -9,8 +9,5 @@ namespace WorkEffect.Website.Models
         public string Image { get; set; }
         
         public string Layout { get; set; }
-
-        public virtual Section Section { get; set; }
-        public int SectionId { get; set; }
     }
 }

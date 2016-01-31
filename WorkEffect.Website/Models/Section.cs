@@ -7,5 +7,8 @@ namespace WorkEffect.Website.Models
         public string Name { get; set; }
         
         public int Order { get; set; }
+        
+        public virtual Content Content{ get; set; }
+        public int ContentId { get; set; }
     }
 }
