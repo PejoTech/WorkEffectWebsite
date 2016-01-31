@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using System.Collections
+@using System.Collections.Specialized
+@using WorkEffect.Website.Data
+@using WorkEffect.Website.Models
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -24,8 +29,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
                 </ul>
-                @Html.Partial("_LoginPartial")
+
+                <ul class="nav navbar-nav navbar-right">
+                    @Html.Partial("_LoginPartial")
+                </ul>
             </div>
         </div>
     </div>
