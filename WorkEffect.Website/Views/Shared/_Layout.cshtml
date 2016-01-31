@@ -43,16 +43,16 @@
                     </li>
 
                     @* Add Sections to Navigation *@
-                    @foreach (var section in (List<Section>)ViewBag.Sections)
+                    @foreach (var item in (List<Section>)ViewBag.Sections)
                     {
-                        <li>@Html.ActionLink(section.Name, "Index", "Home")</li>
-                            <a href="#@content.Section.Name">@content.Section.Name</a>
+                        var sectionName = string.Concat(@item.Name.Replace(" ", ""), item.Id);
+                        <li>
+                            <a href="#@sectionName">@item.Name</a>
                         </li>
                     }
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Content", "Index", "Contents")</li>
                     @Html.Partial("_LoginPartial")
                 </ul>
             </div>

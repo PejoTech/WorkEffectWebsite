@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using WorkEffect.Website.Data;
+using WorkEffect.Website.Models;
 
 namespace WorkEffect.Website.Controllers
 {
     public class HomeController : BaseController
     {
-        public ActionResult Index()
+        public override async Task<ActionResult> Index()
         {
+            await base.PopulateViewBag();
+
             return View();
         }
     }

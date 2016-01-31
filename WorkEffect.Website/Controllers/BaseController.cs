@@ -20,7 +20,7 @@ namespace WorkEffect.Website.Controllers
 
         internal async Task<int> PopulateViewBag()
         {
-            ViewBag.Sections = await Context.Contents.Include(a => a.Section).ToListAsync();
+            ViewBag.Sections = await Context.Sections.ToListAsync();
 
             return 1;
         }

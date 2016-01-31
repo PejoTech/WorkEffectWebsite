@@ -26,6 +26,6 @@ namespace WorkEffect.Website.Data
         
         public DbSet<Section> Sections { get; set; }
 
-        public DbSet<Content> Contents { get; set; }
+        public DbSet<Layout> Layouts { get; set; }
     }
 }
