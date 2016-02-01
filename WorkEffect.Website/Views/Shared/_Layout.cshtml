@@ -55,13 +55,14 @@
                     {
                         var sectionName = string.Concat(@item.Name.Replace(" ", ""), item.Id);
                         <li>
-                            <a href="#@sectionName">@item.Name</a>
+                            <a href="#@sectionName" class="page-scroll">@item.Name</a>
                         </li>
                     }
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    @Html.Partial("_LoginPartial")
+                <ul class="nav navbar-nav navbar-small">
+                    @*@Html.Partial("_LoginPartial")*@
+                    @Html.ActionLink("Layouts", "Index", "Layout")
                 </ul>
             </div>
         </div>

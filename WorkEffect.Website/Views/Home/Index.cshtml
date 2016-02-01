@@ -1,20 +1,7 @@
 ﻿@model List<Section>
 
-@functions {
-    public string JoinContentAndLayout(Section section)
-    {
-        if (!string.IsNullOrWhiteSpace(section.Image))
-        {
-            var imagePath = string.Concat("../Content/Images/", section.Image);
-            return string.Format(section.Layout.HtmlContainer, section.Name.Replace(" ", "") + section.Id, imagePath, section.Content);
-        }
-
-        return string.Format(section.Layout.HtmlContainer, section.Name.Replace(" ", "") + section.Id, section.Content);
-    }
-}
-
 @using WorkEffect.Website.Models
-@foreach (var item in (List<Section>)ViewBag.Sections)
+@foreach (var section in (List<Section>)ViewBag.Sections)
 {
-    @Html.Raw(JoinContentAndLayout(item))
+    @Html.Raw(Html.Action("RenderContent", new { Section = section}))
 }

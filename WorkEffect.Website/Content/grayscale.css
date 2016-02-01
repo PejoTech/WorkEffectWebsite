@@ -69,6 +69,11 @@ a:focus {
     background-color: #000;
 }
 
+.navbar-small {
+    font-size: 10px;
+    margin-top: 20px
+}
+
 .navbar-custom .navbar-brand {
     font-weight: 700;
 }
@@ -257,7 +262,7 @@ a:focus {
     }
 }
 
-.content-section {
+.content-section, .admin-section {
     padding-top: 100px;
 }
 
@@ -279,6 +284,9 @@ a:focus {
 }
 
 @media(min-width:767px) {
+    .admin-section {
+        padding-top: 100px;
+    }
     .content-section {
         padding-top: 250px;
     }

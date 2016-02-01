@@ -10,5 +10,7 @@ namespace WorkEffect.Website.Models
         public string Name { get; set; }
 
         public string HtmlContainer { get; set; }
+
+        public LayoutType LayoutType { get; set; }
     }
 }

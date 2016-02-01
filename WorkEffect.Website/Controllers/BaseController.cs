@@ -24,5 +24,27 @@ namespace WorkEffect.Website.Controllers
 
             return 1;
         }
+
+        public ActionResult RenderContent(Section section)
+        {
+            return RenderLayout(section.Layout.HtmlContainer, section.Content, section.Name, section.Id, section.Image);
+        }
+
+        public ActionResult RenderDummyLayout(Layout layout)
+        {
+            return RenderLayout(layout.HtmlContainer, "Lorem ipsum dolor sit amet", "Dummy", 0, "dummy.jpg");
+        }
+
+        private ActionResult RenderLayout(string html, string content, string sectionName, int sectionId, string image)
+        {
+            var result = "";
+            if (!string.IsNullOrWhiteSpace(image))
+            {
+                var imagePath = string.Concat("../Content/Images/", image);
+                result = string.Format(html, sectionName.Replace(" ", "") + sectionId, imagePath, content);
+            }
+
+            return Content(result);
+        }
     }
 }
