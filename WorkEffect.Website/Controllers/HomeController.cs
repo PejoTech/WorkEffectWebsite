@@ -12,6 +12,7 @@ namespace WorkEffect.Website.Controllers
 {
     public class HomeController : BaseController
     {
+        [RequireHttps]
         public override async Task<ActionResult> Index()
         {
             await base.PopulateViewBag();

@@ -3,6 +3,11 @@
 @functions {
     public string JoinContentAndLayout(Section section)
     {
+        if (!string.IsNullOrWhiteSpace(section.Image))
+        {
+            return string.Format(section.Layout.HtmlContainer, section.Name.Replace(" ", "") + section.Id, section.Image, section.Content);
+        }
+
         return string.Format(section.Layout.HtmlContainer, section.Name.Replace(" ", "") + section.Id, section.Content);
     }
 }
