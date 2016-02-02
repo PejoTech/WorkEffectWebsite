@@ -9,8 +9,9 @@ namespace WorkEffect.Website.Models
     {
         Text = 0,
         Image = 1,
-        TextSectionId = 2,
-        ImageSectionId = 3,
-        TextImageSectionId = 4,
+        TextImage = 2,
+        TextSectionId = 3,
+        ImageSectionId = 4,
+        TextImageSectionId = 5
     }
 }

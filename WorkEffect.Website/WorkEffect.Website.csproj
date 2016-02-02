@@ -211,7 +211,6 @@
     <Content Include="Content\grayscale.css" />
     <Content Include="Content\Images\dummy.jpg" />
     <Content Include="Content\Images\IMG_20150515_174758.jpg" />
-    <Content Include="Content\Images\IMG_20160130_121150.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

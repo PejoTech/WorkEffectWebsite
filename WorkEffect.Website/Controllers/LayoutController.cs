@@ -35,22 +35,16 @@ namespace WorkEffect.Website.Controllers
         //    return View();
         //}
 
-        //// POST: Layout/Create
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Create([Bind(Include = "Id,Name,HtmlContainer")] Layout layout)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        Context.Layouts.Add(layout);
-        //        await Context.SaveChangesAsync();
-        //        return RedirectToAction("Index");
-        //    }
-
-        //    return View(layout);
-        //}
+        // POST: Layout/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public override async Task<ActionResult> Create([Bind(Include = "Name,HtmlContainer,LayoutType")] Layout layout)
+        {
+            return await base.Create(layout);
+        }
 
         //// GET: Layout/Edit/5
         //public async Task<ActionResult> Edit(int? id)
@@ -67,21 +61,16 @@ namespace WorkEffect.Website.Controllers
         //    return View(layout);
         //}
 
-        //// POST: Layout/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Edit([Bind(Include = "Id,Name,HtmlContainer")] Layout layout)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        Context.Entry(layout).State = EntityState.Modified;
-        //        await Context.SaveChangesAsync();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(layout);
-        //}
+        // POST: Layout/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public override async Task<ActionResult> Edit([Bind(Include = "Id,Name,HtmlContainer,LayoutType")] Layout layout)
+        {
+            return await base.Edit(layout);
+        }
 
         //// GET: Layout/Delete/5
         //public async Task<ActionResult> Delete(int? id)

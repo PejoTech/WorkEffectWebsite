@@ -41,7 +41,7 @@ namespace WorkEffect.Website.Controllers
         }
 
         // GET: 
-        public virtual async Task<ActionResult> Create()
+        public async Task<ActionResult> Create()
         {
             await base.PopulateViewBag();
             return View();
@@ -52,20 +52,20 @@ namespace WorkEffect.Website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Name,Order")] T section)
+        public virtual async Task<ActionResult> Create(T entity)
         {
             if (ModelState.IsValid)
             {
-                Context.Set<T>().Add(section);
+                Context.Set<T>().Add(entity);
                 await Context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(section);
+            return View(entity);
         }
 
         // GET: 
-        public virtual async Task<ActionResult> Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             await base.PopulateViewBag();
             if (id == null)
@@ -85,7 +85,7 @@ namespace WorkEffect.Website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Name,Order")] T entity)
+        public virtual async Task<ActionResult> Edit(T entity)
         {
             if (ModelState.IsValid)
             {

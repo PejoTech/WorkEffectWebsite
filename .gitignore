@@ -227,7 +227,7 @@ _Pvt_Extensions
 .paket/paket.exe
 
 # SQLite
-_*.sqlite
+**/._*.sqlite
 
 # FAKE - F# Make
 .fake/

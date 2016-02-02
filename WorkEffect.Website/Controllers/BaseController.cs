@@ -43,6 +43,10 @@ namespace WorkEffect.Website.Controllers
                 var imagePath = string.Concat("../Content/Images/", image);
                 result = string.Format(html, sectionName.Replace(" ", "") + sectionId, imagePath, content);
             }
+            else if (sectionId > 0 && !string.IsNullOrWhiteSpace(content))
+            {
+                result = string.Format(html, sectionName.Replace(" ", "") + sectionId, content);
+            }
 
             return Content(result);
         }
