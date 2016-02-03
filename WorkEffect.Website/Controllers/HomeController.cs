@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Web;
 using System.Web.Mvc;
+using WorkEffect.Website.Data;
 
 namespace WorkEffect.Website.Controllers
 {
@@ -10,6 +13,10 @@ namespace WorkEffect.Website.Controllers
     {
         public ActionResult Index()
         {
+            var init = new WorkEffectDbInitializer(new DbModelBuilder());
+            var c = new WorkEffectDbContext();
+            var l = c.Layouts.First();
+
             return View();
         }
 
