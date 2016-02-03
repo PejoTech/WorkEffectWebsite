@@ -1,95 +1,42 @@
-﻿@using System.Collections
-@using System.Collections.Specialized
-@using System.Diagnostics
-@using WorkEffect.Website.Data
-@using WorkEffect.Website.Models
-
-@{
-    var sectionsList = (List<Section>) ViewBag.Sections;
-    var firstSection = sectionsList.OrderBy(a => a.Order).FirstOrDefault();
-
-    Debug.Assert(firstSection != null, "firstSection != null");
-    var firstSectionName = string.Concat(firstSection.Name.Replace(" ", ""), firstSection.Id);
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - WorkEffect</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/grayscale")
-    @RenderSection("scripts", required: false)
-
-    <!-- Custom Fonts -->
-    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">WorkEffect</span>
-                </a>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-
-                    @* Add Sections to Navigation *@
-                    @foreach (var item in sectionsList)
-                    {
-                        var sectionName = string.Concat(@item.Name.Replace(" ", ""), item.Id);
-                        <li>
-                            <a href="#@sectionName" class="page-scroll">@item.Name</a>
-                        </li>
-                    }
-                </ul>
-
-                <ul class="nav navbar-nav navbar-small">
-                    @*@Html.Partial("_LoginPartial")*@
-                    @Html.ActionLink("Layouts", "Index", "Layout")
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
-    </nav>
-    <!-- Intro Header -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">WorkEffect</h1>
-                        <p class="intro-text">Life is about kicking ass, not licking it!</p>
-                        <a href="#@firstSectionName" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
 
-    @RenderBody()
-
-    <footer>
-        <div class="container text-center">
-            <p>WorkEffect</p>
-        </div>
-    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -14,7 +14,7 @@ namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : DbContext
     {
-        private static readonly string FileName = HttpRuntime.AppDomainAppPath + @"App_Data\WorkEffect.sqlite";
+        private static readonly string FileName = "|DataDirectory|WorkEffect.sqlite";
         
         public WorkEffectDbContext() 
             : base(new SQLiteConnection() { ConnectionString =
