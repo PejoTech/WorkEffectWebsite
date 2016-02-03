@@ -14,8 +14,13 @@ namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : DbContext
     {
-        private static readonly string FileName = "|DataDirectory|WorkEffect.sqlite";
-        
+
+        public DbSet<Section> Sections { get; set; }
+
+        public DbSet<Layout> Layouts { get; set; }
+
+        private static readonly string FileName = HttpRuntime.AppDomainAppPath + "Migrations.sqlite";
+
         public WorkEffectDbContext() 
             : base(new SQLiteConnection() { ConnectionString =
             new SQLiteConnectionStringBuilder()
@@ -23,9 +28,5 @@ namespace WorkEffect.Website.Data
             .ConnectionString }, true)
         {
         }
-        
-        public DbSet<Section> Sections { get; set; }
-
-        public DbSet<Layout> Layouts { get; set; }
     }
 }
