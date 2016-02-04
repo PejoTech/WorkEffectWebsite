@@ -48,7 +48,7 @@ namespace WorkEffect.Website.Data
         public WorkEffectDbInitializer(DbModelBuilder modelBuilder)
             : base(modelBuilder)
         {
-            Seed(new WorkEffectDbContext());
+            //Seed(new WorkEffectDbContext());
         }
 
         protected sealed override void Seed(WorkEffectDbContext context)
