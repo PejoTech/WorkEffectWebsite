@@ -58,7 +58,7 @@ a:focus {
 }
 
 .bigger {
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .text-white {
@@ -93,7 +93,7 @@ a:focus {
 
 .navbar-custom .navbar-brand {
     padding: 15px 12px;
-    font-size: 20px;
+    font-size: 15px;
     color: #fff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -201,20 +201,19 @@ a:focus {
 }
 
 .fa-low {
-    padding-top: 210px;
+    padding-top: 500px;
 }
 
 .btn-circle {
-    width: 250px;
-    height: 250px;
+    width: 550px;
+    height: 800px;
     margin-top: 15px;
     padding: 7px 16px;
-    border-radius: 100%!important;
     font-size: 40px;
     color: #fff;
-    background: url(Images/logo_trans_bw.png) no-repeat;
-    background-position: 12mm center;
-    background-size: 180px;
+    background: url(Images/logo_trans.png) no-repeat;
+    background-position: 35px 0;
+    background-size: 500px;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
@@ -224,9 +223,9 @@ a:focus {
 .btn-circle:focus {
     outline: 0;
     color: #fff;
-    background: url(Images/logo_trans_bw.png) no-repeat;
-    background-position: 7mm center;
-    background-size: 220px;
+    background: url(Images/logo_trans.png) no-repeat;
+    background-position: 40px 10px;
+    background-size: 480px;
 }
 
 .btn-circle i.animated {

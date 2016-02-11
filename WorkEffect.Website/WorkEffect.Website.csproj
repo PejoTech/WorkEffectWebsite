@@ -163,8 +163,10 @@
     <Content Include="Content\Images\bg_cut.png" />
     <Content Include="Content\Images\downloads-bg.jpg" />
     <Content Include="Content\Images\intro-bg.jpg" />
+    <Content Include="Content\Images\logo_trans.png" />
     <Content Include="Content\Images\logo_trans_bw.png" />
     <Content Include="Content\Images\map-marker.png" />
+    <Content Include="Content\Images\worEffect_nav.png" />
     <Content Include="Data\Layouts.sql" />
     <Content Include="Data\Sections.sql" />
     <Content Include="Content\bootstrap.css" />
