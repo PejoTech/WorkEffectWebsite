@@ -8,14 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.AspNet.Identity.EntityFramework;
 using WorkEffect.Website.Models;
 
 namespace WorkEffect.Website.Data
 {
-    public class WorkEffectDbContext : DbContext
+    public class WorkEffectDbContext : IdentityDbContext<AppUser>
     {
-        private static readonly string FileName = HttpRuntime.AppDomainAppPath + @"App_Data\WorkEffect.sqlite";
-        
         public WorkEffectDbContext() 
             : base(new SQLiteConnection() { ConnectionString =
             new SQLiteConnectionStringBuilder()

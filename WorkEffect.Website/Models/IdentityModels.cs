@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using System.Data.SQLite;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -19,18 +18,16 @@ namespace WorkEffect.Website.Models
         }
     }
 
-    //public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    //{
-    //    static readonly SQLiteConnection connection = new SQLiteConnection(@"Data Source=.\AppData\WorkEffect.sqlite");
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext()
+            : base("DefaultConnection", throwIfV1Schema: false)
+        {
+        }
 
-    //    public ApplicationDbContext()
-    //        : base("DefaultConnection", throwIfV1Schema: false)
-    //    {
-    //    }
-
-    //    public static ApplicationDbContext Create()
-    //    {
-    //        return new ApplicationDbContext();
-    //    }
-    //}
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+    }
 }
