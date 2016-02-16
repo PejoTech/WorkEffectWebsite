@@ -15,16 +15,9 @@ namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : IdentityDbContext<AppUser>
     {
-        public WorkEffectDbContext() 
-            : base(new SQLiteConnection() { ConnectionString =
-            new SQLiteConnectionStringBuilder()
-                { DataSource = FileName, ForeignKeys = true }
-            .ConnectionString }, true)
-        {
-        }
-        
         public DbSet<Section> Sections { get; set; }
 
         public DbSet<Layout> Layouts { get; set; }
-    }
+
+     }
 }

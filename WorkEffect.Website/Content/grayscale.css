@@ -57,6 +57,14 @@ a:focus {
     color: #1d9b6c;
 }
 
+.bigger {
+    font-size: 20px;
+}
+
+.text-white {
+    color: #fff;
+}
+
 .light {
     font-weight: 400;
 }
@@ -67,6 +75,7 @@ a:focus {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     background-color: #000;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .navbar-small {
@@ -82,10 +91,11 @@ a:focus {
     outline: 0;
 }
 
-.navbar-custom .navbar-brand .navbar-toggle {
-    padding: 4px 6px;
-    font-size: 16px;
+.navbar-custom .navbar-brand {
+    padding: 15px 12px;
+    font-size: 15px;
     color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .navbar-custom .navbar-brand .navbar-toggle:focus,
@@ -152,7 +162,8 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(Images/IMG_20150515_174758.jpg) no-repeat bottom center scroll;
+    background: url(Images/bg_cut.png) no-repeat scroll;
+    background-position:bottom right;
     background-color: #000;
     background-size: cover;
     -o-background-size: cover;
@@ -163,6 +174,7 @@ a:focus {
 .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
+    padding-top: 260px;
 }
 
 .intro .intro-body .brand-heading {
@@ -188,16 +200,20 @@ a:focus {
     }
 }
 
+.fa-low {
+    padding-top: 500px;
+}
+
 .btn-circle {
-    width: 70px;
-    height: 70px;
+    width: 550px;
+    height: 800px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid #fff;
-    border-radius: 100%!important;
     font-size: 40px;
     color: #fff;
-    background: 0 0;
+    background: url(Images/logo_trans.png) no-repeat;
+    background-position: 35px 0;
+    background-size: 500px;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
@@ -207,7 +223,9 @@ a:focus {
 .btn-circle:focus {
     outline: 0;
     color: #fff;
-    background: rgba(255,255,255,.1);
+    background: url(Images/logo_trans.png) no-repeat;
+    background-position: 40px 10px;
+    background-size: 480px;
 }
 
 .btn-circle i.animated {

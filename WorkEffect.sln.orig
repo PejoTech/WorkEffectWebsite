@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkEffect.Website", "WorkEffect.Website\WorkEffect.Website.csproj", "{EFB99EEA-92B6-4F7B-B39F-EC5122756045}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkEffect.Website", "WorkEffect.Website\WorkEffect.Website.csproj", "{38BCC830-7855-4117-8D7B-C9F1C2C57B15}"
+>>>>>>> NewApproach
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
+		{EFB99EEA-92B6-4F7B-B39F-EC5122756045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB99EEA-92B6-4F7B-B39F-EC5122756045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB99EEA-92B6-4F7B-B39F-EC5122756045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB99EEA-92B6-4F7B-B39F-EC5122756045}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{38BCC830-7855-4117-8D7B-C9F1C2C57B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38BCC830-7855-4117-8D7B-C9F1C2C57B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38BCC830-7855-4117-8D7B-C9F1C2C57B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38BCC830-7855-4117-8D7B-C9F1C2C57B15}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> NewApproach
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
