@@ -150,6 +150,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606051449253_InitialCreate.cs" />
+    <Compile Include="Migrations\201606051449253_InitialCreate.Designer.cs">
+      <DependentUpon>201606051449253_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Layout.cs" />
@@ -157,6 +162,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\WorkEffect.mdf" />
+    <Content Include="App_Data\WorkEffect_log.ldf">
+      <DependentUpon>WorkEffect.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\grayscale.css" />
@@ -167,8 +176,6 @@
     <Content Include="Content\Images\logo_trans_bw.png" />
     <Content Include="Content\Images\map-marker.png" />
     <Content Include="Content\Images\worEffect_nav.png" />
-    <Content Include="Data\Layouts.sql" />
-    <Content Include="Data\Sections.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -197,7 +204,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -211,10 +220,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="WorkEffect.sqlite" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <EmbeddedResource Include="Migrations\201606051449253_InitialCreate.resx">
+      <DependentUpon>201606051449253_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
