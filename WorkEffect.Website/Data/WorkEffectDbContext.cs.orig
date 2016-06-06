@@ -8,65 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-<<<<<<< HEAD
 using Microsoft.AspNet.Identity.EntityFramework;
-=======
-using SQLite.CodeFirst;
->>>>>>> NewApproach
 using WorkEffect.Website.Models;
 
 namespace WorkEffect.Website.Data
 {
     public class WorkEffectDbContext : IdentityDbContext<AppUser>
     {
-<<<<<<< HEAD
-=======
-
         public DbSet<Section> Sections { get; set; }
 
         public DbSet<Layout> Layouts { get; set; }
+<<<<<<< HEAD
 
-        private static readonly string FileName = HttpRuntime.AppDomainAppPath + "WorkEffect.sqlite";
-        private static readonly SQLiteConnection sqliteConnection = new SQLiteConnection()
-        {
-            ConnectionString =
-                new SQLiteConnectionStringBuilder
-                {
-                    DataSource = FileName,
-                    ForeignKeys = true
-                }.ConnectionString
-        };
-
->>>>>>> NewApproach
-        public WorkEffectDbContext() 
-            : base(sqliteConnection, true)
-        {
-        }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<WorkEffectDbContext>(modelBuilder);
-            Database.SetInitializer(sqliteConnectionInitializer);
-        }
+     }
+=======
     }
-
-    public class WorkEffectDbInitializer : SqliteCreateDatabaseIfNotExists<WorkEffectDbContext>
-    {
-        public WorkEffectDbInitializer(DbModelBuilder modelBuilder)
-            : base(modelBuilder)
-        {
-            //Seed(new WorkEffectDbContext());
-        }
-
-        protected sealed override void Seed(WorkEffectDbContext context)
-        {
-            context.Set<Layout>().Add(new Layout
-            {
-                HtmlContainer = "asd",
-                LayoutType = 0,
-                Name = "123"
-            });
-            context.SaveChanges();
-        }
-    }
+>>>>>>> c944f754acfae9e6d4da55d0eb6f3d70b250b934
 }

@@ -9,11 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-<<<<<<< HEAD
-    <ProjectGuid>{EFB99EEA-92B6-4F7B-B39F-EC5122756045}</ProjectGuid>
-=======
     <ProjectGuid>{38BCC830-7855-4117-8D7B-C9F1C2C57B15}</ProjectGuid>
->>>>>>> NewApproach
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -48,8 +44,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -58,7 +52,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
->>>>>>> NewApproach
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -144,26 +137,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Models\AccountViewModels.cs" />
-=======
->>>>>>> NewApproach
+    <Compile Include="Migrations\201606051449253_InitialCreate.cs" />
+    <Compile Include="Migrations\201606051449253_InitialCreate.Designer.cs">
+      <DependentUpon>201606051449253_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\Layout.cs" />
-<<<<<<< HEAD
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
-    <Compile Include="Views\AppViewPage.cs" />
-    <Compile Include="Views\HtmlExtensions.cs" />
-=======
-    <Compile Include="Models\Section.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
->>>>>>> NewApproach
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\WorkEffect.mdf" />
+    <Content Include="App_Data\WorkEffect_log.ldf">
+      <DependentUpon>WorkEffect.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\grayscale.css" />
@@ -174,8 +164,6 @@
     <Content Include="Content\Images\logo_trans_bw.png" />
     <Content Include="Content\Images\map-marker.png" />
     <Content Include="Content\Images\worEffect_nav.png" />
-    <Content Include="Data\Layouts.sql" />
-    <Content Include="Data\Sections.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -189,10 +177,6 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-<<<<<<< HEAD
-=======
-    <None Include="Properties\PublishProfiles\WorkeffectWebsite - Web Deploy.pubxml" />
->>>>>>> NewApproach
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -206,7 +190,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -220,49 +206,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
 <<<<<<< HEAD
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Layout\Create.cshtml" />
-    <Content Include="Views\Layout\Delete.cshtml" />
-    <Content Include="Views\Layout\Details.cshtml" />
-    <Content Include="Views\Layout\Edit.cshtml" />
-    <Content Include="Views\Layout\Index.cshtml" />
+    <Folder Include="App_Data\" />
     <Content Include="Views\Layout\_createOrEdit.cshtml" />
-    <Content Include="Views\Section\Create.cshtml" />
-    <Content Include="Views\Section\Delete.cshtml" />
-    <Content Include="Views\Section\Details.cshtml" />
-    <Content Include="Views\Section\Edit.cshtml" />
-    <Content Include="Views\Section\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
 =======
-    <Content Include="WorkEffect.sqlite" />
+    <EmbeddedResource Include="Migrations\201606051449253_InitialCreate.resx">
+      <DependentUpon>201606051449253_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> c944f754acfae9e6d4da55d0eb6f3d70b250b934
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
->>>>>>> NewApproach
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -287,15 +243,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-<<<<<<< HEAD
-          <DevelopmentServerPort>55233</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55076/</IISUrl>
-=======
           <DevelopmentServerPort>52058</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:52058/</IISUrl>
->>>>>>> NewApproach
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

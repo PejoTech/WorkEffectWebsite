@@ -13,10 +13,6 @@ namespace WorkEffect.Website.Controllers
     {
         public ActionResult Index()
         {
-            var init = new WorkEffectDbInitializer(new DbModelBuilder());
-            var c = new WorkEffectDbContext();
-            var l = c.Layouts.First();
-
             return View();
         }
 
