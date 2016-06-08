@@ -23,6 +23,9 @@ namespace WorkEffect.Website
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/parallax").Include(
+                "~/Scripts/parallax.js-1.4.2/parallax.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));

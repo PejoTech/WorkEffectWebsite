@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>WorkEffect</title>
 
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -13,110 +13,139 @@
 
 </head>
 <body id="page-top">
-    <div class="background">
-
-    </div>
-
-    <header class="intro">
+    <header class="intro" data-parallax="scroll" data-image-src="/Content/Images/bg_cut.png">
+        @*<div class="intro-backgroud">
+            </div>*@
         <div class="intro-body">
         </div>
     </header>
 
-    <nav class="navbar navbar-inverse" data-spy="affix">
-        <!-- data-offset-top="400"> -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle text-white" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                WorkEffect
-            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#content1">Page 1</a></li>
-                <li><a href="#content2">Page 2</a></li>
-                <li><a href="#content3">Page 3</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 container content-section">
-            @RenderBody()
+    <div class="nav-wrapper">
+        <nav class="navbar navbar-inverse" data-spy="affix">
+            <!-- data-offset-top="400"> -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle text-white" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse navbar-center navbar-main-collapse">
+                <ul class="nav navbar-nav text-white navbar-brand">
+                    <li><a href="#content1">Work Effect</a></li>
+                    <li><a href="#content1">Featherweight</a></li>
+                    <li><a href="#content2">Welding</a></li>
+                    <li><a href="#content3">Fiber</a></li>
+                    <li><a href="#content3">Motorcycles</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
-</div>
 
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
+    @*<div class="content-shadow">
+        </div>*@
 
-<script type="text/javascript">
-    $(document).ready(function () {
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
 
-        var msg = document.getElementById('condition');
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-left">
+                        Work Effect GmbH |
+                        Uetendorf |
+                        Glütschbachstrasse 22b |
+                        3661 Uetendorf
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-right">
+                        Benjamin Emmenegger |
+                        B.Emmenegger@WorkEffect.ch |
+                        +41 79 353 36 60
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        if (msg != null) {
-            var handleMediaChange = function (mql) {
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/parallax")
 
-                // For some reason Firefox has trouble always running this code.
-                // The console.log seems to help it.
-                // TODO: Figure out what the hell that's all about
-                console.log();
+    <script type="text/javascript">
+        $(document).ready(function () {
 
-                if (mql.matches) {
-                    msg.setAttribute('class', 'met');
-                    msg.innerHTML = 'The condition "' + mql.media + '" was met.';
-                }
-                else {
-                    msg.setAttribute('class', 'unmet');
-                    msg.innerHTML = 'The condition "' + mql.media + '" was not met.';
-                }
-            };
+            var msg = document.getElementById('condition');
 
-            mqEvents(handleMediaChange);
-        }
-    });
+            if (msg != null) {
+                var handleMediaChange = function (mql) {
 
-    (function () {
-        var mqEvents = function (mediaChangeHandler) {
-            var sheets = document.styleSheets,
-                    numSheets = sheets.length,
-                    mqls = {},
-                    mediaChange = function (mql) {
-                        console.log(mql);
+                    // For some reason Firefox has trouble always running this code.
+                    // The console.log seems to help it.
+                    // TODO: Figure out what the hell that's all about
+                    console.log();
+
+                    if (mql.matches) {
+                        msg.setAttribute('class', 'met');
+                        msg.innerHTML = 'The condition "' + mql.media + '" was met.';
                     }
-
-            if (mediaChangeHandler) {
-                mediaChange = mediaChangeHandler;
-            }
-
-            for (var i = 0; i < numSheets; i += 1) {
-                if (sheets[i].cssRules == null) {
-                    continue;
-                }
-
-                var rules = sheets[i].cssRules;
-                var numRules = rules.length;
-                for (var j = 0; j < numRules; j += 1) {
-                    if (rules[j].constructor === CSSMediaRule) {
-                        mqls['mql' + j] = window.matchMedia(rules[j].media.mediaText);
-                        mqls['mql' + j].addListener(mediaChange);
-                        mediaChange(mqls['mql' + j]);
+                    else {
+                        msg.setAttribute('class', 'unmet');
+                        msg.innerHTML = 'The condition "' + mql.media + '" was not met.';
                     }
-                }
-            }
-        }
+                };
 
-        window.mqEvents = mqEvents;
-
-        $('nav').affix({
-            offset: {
-                top: $('header').height()
+                mqEvents(handleMediaChange);
             }
         });
-    }());
-</script>
 
-@RenderSection("scripts", required: false)
+        (function () {
+            var mqEvents = function (mediaChangeHandler) {
+                var sheets = document.styleSheets,
+                        numSheets = sheets.length,
+                        mqls = {},
+                        mediaChange = function (mql) {
+                            console.log(mql);
+                        }
+
+                if (mediaChangeHandler) {
+                    mediaChange = mediaChangeHandler;
+                }
+
+                for (var i = 0; i < numSheets; i += 1) {
+                    if (sheets[i].cssRules == null) {
+                        continue;
+                    }
+
+                    var rules = sheets[i].cssRules;
+                    var numRules = rules.length;
+                    for (var j = 0; j < numRules; j += 1) {
+                        if (rules[j].constructor === CSSMediaRule) {
+                            mqls['mql' + j] = window.matchMedia(rules[j].media.mediaText);
+                            mqls['mql' + j].addListener(mediaChange);
+                            mediaChange(mqls['mql' + j]);
+                        }
+                    }
+                }
+            }
+
+            window.mqEvents = mqEvents;
+
+            $('nav').affix({
+                offset: {
+                    top: $('header').height()
+                }
+            });
+
+            $('')
+        }());
+    </script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

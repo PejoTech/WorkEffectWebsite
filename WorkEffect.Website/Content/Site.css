@@ -1,10 +1,26 @@
-﻿.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+﻿p {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-variant: normal;
+    -moz-font-variant: normal;
+    -ms-font-variant: normal;
+    -o-font-variant: normal;
+    font-variant: normal;
+    line-height: 20px;
 }
 
-.dl-horizontal dt {
-    white-space: normal;
+h1, h2, h3, h4, h5, h6 {
+    font-family: Consolas, monaco, monospace;
+    font-size: 26px;
+    font-weight: 800;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 25px;
+}
+
+body {
+    font-family: Consolas, monaco, monospace;
 }
 
 input,
@@ -13,26 +29,50 @@ textarea {
     max-width: 280px;
 }
 
-.background {
+.intro {
+    display: table;
+    width: 100%;
+    height: 50px;
+    /*hpadding: 0 0;
+    text-align: center;*/
+}
+
+.intro-backgroud {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url('Images/bg_cut.png') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.navbar-center {
+    text-align: center;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.content-shadow {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    -o-transform: rotate(30deg);
-    transform: rotate(30deg);
-    transform: scale(4);
-    -ms-background-size: cover;
-    background-size: cover;
-    background: rgb(229,229,229);
-    background: -moz-linear-gradient(top,  rgba(229,229,229,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 49%, rgba(249,249,249,1) 100%);
-    background: -webkit-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 49%,rgba(249,249,249,1) 100%);
-    background: linear-gradient(to bottom,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 49%,rgba(249,249,249,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f9f9f9',GradientType=0 );
+    -ms-border-radius: 5%;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 9px 0px 0px white, 0 -9px 0px 0px white, 12px 0 15px -4px rgba(31, 73, 125, 0.8), -12px 0 15px -4px rgba(31, 73, 125, 0.8);
 }
 
 .affix {
@@ -44,22 +84,7 @@ textarea {
         padding-top: 0;
     }
 
-header {
-    display: table;
-    width: 100%;
-    height: 50px;
-    /*hpadding: 0 0;
-    text-align: center;
-    color: #fff;*/
-    background: url('Images/bg_cut.png') no-repeat;
-    background-position: center center;
-    background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-}
-
-.intro .intro-body {
+.intro-body {
     display: table-cell;
     vertical-align: middle;
     padding-top: 180px;
@@ -73,30 +98,133 @@ header {
         font-size: 18px;
     }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 2.5%;
+    width: 95%;
+    height: 35px;
+    background-color: #222222;
+    border-color: #080808;
+    font-size: 10px;
+    text-align: center
+}
+
+.footer-right {
+    text-align: right
+}
+
+.footer-left, .footer-right {
+    /*border: solid 1px white;*/
+    padding-top: 12px;
+    color: #fff;
+}
+
+.text-muted {
+    font-size: 12px;
+}
+
+.TileHeader {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.image-container {
+    padding: 0 0 5px 5px;
+}
+
+.text-container {
+    padding: 5px 5px 5px 5px;
+}
+
+.text-white {
+    color: #ccc;
+}
+
+.nav-wrapper {
+    min-height:48px;
+}
+
+.navbar-nav > li > a {
+    padding: 0 22px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
+
 @media(min-width:768px) {
     .intro {
         height: 400px;
         padding: 0;
     }
 
-        .intro .intro-body .brand-heading {
-            font-size: 100px;
+    .navbar {
+        -ms-border-radius: 0px 0px 5px 5px;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+        .navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
         }
 
-        .intro .intro-body .intro-text {
-            font-size: 26px;
+        .navbar .navbar-collapse {
+            text-align: center;
         }
-}
 
-@media(max-width:768px) {
-    .intro {
+    .footer {
+        -ms-border-radius: 5px 5px 0px 0px;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    .intro .intro-body .brand-heading {
+        font-size: 100px;
+    }
+
+    .intro .intro-body .intro-text {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 18px;
     }
 }
 
-.content-section {
-    -ms-border-radius: 5%;
-    border-radius: 5%;
-    -webkit-box-shadow: inset 2px 2px 2px 2px black;
-    -ms-box-shadow: inset 0 0 0 black;
-    box-shadow: inset 0 0 0 black;
+@media (max-width: 992px) {
+    .footer {
+        width: 100%;
+        left: 0;
+    }
 }
+
+/*.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%6;
+    height: 100%;
+    z-index: -2;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+    transform: scale(4);
+    -ms-background-size: cover;
+    background-size: cover;
+    background: rgb(229,229,229);
+    background: -moz-linear-gradient(top,  rgba(229,229,229,1) 0%, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 49%, rgba(249,249,249,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 49%,rgba(249,249,249,1) 100%);
+    background: linear-gradient(to bottom,  rgba(229,229,229,1) 0%,rgba(255,255,255,1) 0%,rgba(255,255,255,1) 49%,rgba(249,249,249,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f9f9f9',GradientType=0 );
+}*/
