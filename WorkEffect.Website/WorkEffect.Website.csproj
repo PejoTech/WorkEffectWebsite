@@ -147,7 +147,17 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\BenuPaddel.png" />
+    <Content Include="Content\Images\batch\paddel_benu.jpg" />
+    <Content Include="Content\Images\batch\lampe.jpg" />
+    <Content Include="Content\Images\batch\fiber_mpower.jpg" />
+    <Content Include="Content\Images\batch\paddel_gras2.jpg" />
+    <Content Include="Content\Images\batch\paddel_gras.jpg" />
+    <Content Include="Content\Images\batch\fiber.jpg" />
+    <Content Include="Content\Images\batch\paddel_wasser.jpg" />
+    <Content Include="Content\Images\batch\welding2.jpg" />
+    <Content Include="Content\Images\batch\paddeln.jpg" />
+    <Content Include="Content\Images\batch\paddeln2.jpg" />
+    <Content Include="Content\Images\batch\welding.jpg" />
     <Content Include="Content\Images\bg_cut.png" />
     <Content Include="Content\Images\logo_trans.png" />
     <Content Include="Content\Images\logo_trans_bw.png" />
@@ -167,7 +177,6 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\mediaChangeHandler.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\parallax.js-1.4.2\parallax.js" />
     <Content Include="Scripts\parallax.js-1.4.2\parallax.min.js" />

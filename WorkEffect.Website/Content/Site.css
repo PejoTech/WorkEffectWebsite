@@ -128,12 +128,20 @@ textarea {
     font-size: 12px;
 }
 
+.title-container {
+    padding-left: 5px
+}
+
 .body-container {
     margin-bottom: 60px;
 }
 
 .image-container {
     padding: 0 5px;
+    background-position: center center;
+    -ms-background-size: cover;
+    background-size: cover;
+    min-height: 400px;
 }
 
 .text-container {
