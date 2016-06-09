@@ -54,6 +54,10 @@ textarea {
     text-align: center;
 }
 
+.nav-active {
+    text-decoration: underline;
+}
+
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -90,13 +94,13 @@ textarea {
     padding-top: 180px;
 }
 
-    .intro .intro-body .brand-heading {
-        font-size: 40px;
-    }
+.intro .intro-body .brand-heading {
+    font-size: 40px;
+}
 
-    .intro .intro-body .intro-text {
-        font-size: 18px;
-    }
+.intro .intro-body .intro-text {
+    font-size: 18px;
+}
 
 .footer {
     position: fixed;
@@ -107,11 +111,11 @@ textarea {
     background-color: #222222;
     border-color: #080808;
     font-size: 10px;
-    text-align: center
+    text-align: center;
 }
 
 .footer-right {
-    text-align: right
+    text-align: right;
 }
 
 .footer-left, .footer-right {
@@ -124,17 +128,16 @@ textarea {
     font-size: 12px;
 }
 
-.TileHeader {
-    font-size: 26px;
-    font-weight: bold;
+.body-container {
+    margin-bottom: 60px;
 }
 
 .image-container {
-    padding: 0 0 5px 5px;
+    padding: 0 5px;
 }
 
 .text-container {
-    padding: 5px 5px 5px 5px;
+    padding: 0 6px;
 }
 
 .text-white {
@@ -142,7 +145,7 @@ textarea {
 }
 
 .nav-wrapper {
-    min-height:48px;
+    min-height: 48px;
 }
 
 .navbar-nav > li > a {
@@ -198,6 +201,9 @@ textarea {
     p {
         font-size: 18px;
     }
+}
+
+@media (min-width: 992px) {
 }
 
 @media (max-width: 992px) {

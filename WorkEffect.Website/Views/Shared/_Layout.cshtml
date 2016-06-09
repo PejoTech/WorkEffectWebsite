@@ -30,7 +30,7 @@
             </div>
             <div class="collapse navbar-collapse navbar-center navbar-main-collapse">
                 <ul class="nav navbar-nav text-white navbar-brand">
-                    <li><a href="#content1">Work Effect</a></li>
+                    <li><a class="nav-active" href="#content1">Work Effect</a></li>
                     <li><a href="#content1">Featherweight</a></li>
                     <li><a href="#content2">Welding</a></li>
                     <li><a href="#content3">Fiber</a></li>
@@ -45,7 +45,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-md-10 col-md-offset-1 body-container">
                 @RenderBody()
             </div>
         </div>
@@ -79,6 +79,12 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+
+            $(".nav a").on("click", function() {
+                $(".nav").find(".nav-active").removeClass("nav-active");
+                $(this).parent().addClass("nav-active");
+            });
+
 
             var msg = document.getElementById('condition');
 
@@ -141,8 +147,6 @@
                     top: $('header').height()
                 }
             });
-
-            $('')
         }());
     </script>
 

@@ -26,6 +26,9 @@ namespace WorkEffect.Website
             bundles.Add(new ScriptBundle("~/bundles/parallax").Include(
                 "~/Scripts/parallax.js-1.4.2/parallax.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/mediaChangeHandler").Include(
+                "~/Scripts/mediaChangeHandler.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
