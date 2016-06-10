@@ -10,13 +10,21 @@
     line-height: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h5, h6 {
     font-family: Consolas, monaco, monospace;
     font-size: 26px;
     font-weight: 800;
     font-style: normal;
     font-variant: normal;
     line-height: 25px;
+}
+
+h1 {
+    font-size: 50pt;
+}
+
+h4 {
+    font-size: 18pt;
 }
 
 body {
@@ -88,48 +96,53 @@ textarea {
         padding-top: 0;
     }
 
-.intro-body {
-    display: table-cell;
-    vertical-align: middle;
-    padding-top: 180px;
+.brand-heading {
+    font-size: 72px;
+    font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-.intro .intro-body .brand-heading {
-    font-size: 40px;
+.intro-heading-text {
+    padding-right: 12px;
+    font-size: 36px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    -ms-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: right;
+    color: #fff;
 }
 
-.intro .intro-body .intro-text {
-    font-size: 18px;
+.intro-content-position {
+    padding-top: 25px;
+}
+
+.intro-logo {
+    height: 300px;
+    width: 400px;
+    background-image: url(/Content/Images/logo_trans_small.png);
+    background-position: center center;
 }
 
 .footer {
+    width: 100%;
     position: fixed;
     bottom: 0;
-    left: 2.5%;
-    width: 95%;
+    padding-top: 12px;
     height: 35px;
     background-color: #222222;
     border-color: #080808;
     font-size: 10px;
-    text-align: center;
 }
-
-.footer-right {
+    
+.footer-left {
     text-align: right;
-}
-
-.footer-left, .footer-right {
-    /*border: solid 1px white;*/
-    padding-top: 12px;
-    color: #fff;
-}
+    }
 
 .text-muted {
     font-size: 12px;
 }
 
 .title-container {
-    padding-left: 5px
+    padding-left: 5px;
 }
 
 .body-container {
@@ -194,15 +207,8 @@ textarea {
         font-size: 100px;
     }
 
-    .intro .intro-body .intro-text {
-        font-size: 18px;
-    }
-
-    h1 {
-        font-size: 18px;
-    }
-
-    h3 {
+    .intro .intro-body {
+        text-align: right;
         font-size: 18px;
     }
 
@@ -216,8 +222,14 @@ textarea {
 
 @media (max-width: 992px) {
     .footer {
-        width: 100%;
-        left: 0;
+        text-align: center;
+        padding-top: 3px
+    }
+    .footer-right {
+        text-align: center
+    }
+    .footer-left {
+        text-align: center
     }
 }
 

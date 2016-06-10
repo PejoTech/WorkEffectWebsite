@@ -7,16 +7,21 @@
 
     <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900,500,700' rel='stylesheet' type='text/css'>
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body id="page-top">
-    <header class="intro" data-parallax="scroll" data-image-src="/Content/Images/bg_cut.png">
-        @*<div class="intro-backgroud">
-            </div>*@
-        <div class="intro-body">
+    <header class="intro container-fluid" data-parallax="scroll" data-image-src="/Content/Images/bg_cut.png">
+        <div class="intro-content-position">
+            <div class="intro-heading-text col-lg-8" data-toggle="collapse" data-target="hidden">
+                <div class="brand-heading">WorkEffect</div>
+                <div>some fancy slogan?</div>
+            </div>
+            <div class="intro-logo col-lg-4">
+            </div>
         </div>
     </header>
 
@@ -24,7 +29,7 @@
         <nav class="navbar navbar-inverse" data-spy="affix">
             <!-- data-offset-top="400"> -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle text-white" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <button type="button" class="navbar-toggle text-white" data-toggle="collapse">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
@@ -51,24 +56,18 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-left">
-                        Work Effect GmbH |
-                        Uetendorf |
-                        Glütschbachstrasse 22b |
-                        3661 Uetendorf
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-right">
-                        Benjamin Emmenegger |
-                        B.Emmenegger@WorkEffect.ch |
-                        +41 79 353 36 60
-                    </div>
-                </div>
+    <footer class="footer text-white">
+        <div class="row">
+            <div class="col-md-6 footer-left">
+                Work Effect GmbH |
+                Uetendorf |
+                Glütschbachstrasse 22b |
+                3661 Uetendorf
+            </div>
+            <div class="col-md-6 footer-right">
+                Benjamin Emmenegger |
+                B.Emmenegger@WorkEffect.ch |
+                +41 79 353 36 60
             </div>
         </div>
     </footer>
@@ -80,7 +79,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            $(".nav a").on("click", function() {
+            $(".nav a").on("click", function () {
                 $(".nav").find(".nav-active").removeClass("nav-active");
                 $(this).parent().addClass("nav-active");
             });
@@ -153,3 +152,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
