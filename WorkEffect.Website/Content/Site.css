@@ -166,6 +166,11 @@ textarea {
     padding: 0 6px;
 }
 
+.spacer-image-dimensions {
+    height: 400px;
+    margin-bottom: 30px;
+}
+
 .text-white {
     color: #ccc;
 }
