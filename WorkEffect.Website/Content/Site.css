@@ -58,6 +58,48 @@ textarea {
     -moz-background-size: cover;
 }
 
+.brand-heading {
+    font-size: 72px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.intro-content-position {
+    position: absolute;
+    left: 25%;
+    display: table;
+    padding-top: 25px;
+}
+
+.intro-heading-text {
+    display: table-cell;
+    padding-right: 12px;
+    font-size: 36px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    -ms-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: right;
+    color: #fff;
+}
+
+.intro-logo {
+    display: table-cell;
+    height: 300px;
+    width: 400px;
+    background-image: url(/Content/Images/logo_trans_small.png);
+    background-position: center center;
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding-top: 12px;
+    height: 35px;
+    background-color: #222222;
+    border-color: #080808;
+    font-size: 10px;
+}
+
 .navbar-center {
     text-align: center;
 }
@@ -95,43 +137,6 @@ textarea {
     .affix + .container-fluid {
         padding-top: 0;
     }
-
-.brand-heading {
-    font-size: 72px;
-    font-family: 'Alegreya Sans SC', sans-serif;
-}
-
-.intro-heading-text {
-    padding-right: 12px;
-    font-size: 36px;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    -ms-text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    text-align: right;
-    color: #fff;
-}
-
-.intro-content-position {
-    padding-top: 25px;
-}
-
-.intro-logo {
-    height: 300px;
-    width: 400px;
-    background-image: url(/Content/Images/logo_trans_small.png);
-    background-position: center center;
-}
-
-.footer {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    padding-top: 12px;
-    height: 35px;
-    background-color: #222222;
-    border-color: #080808;
-    font-size: 10px;
-}
     
 .footer-left {
     text-align: right;
