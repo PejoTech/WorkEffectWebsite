@@ -157,9 +157,10 @@ textarea {
 .image-container {
     padding: 0 5px;
     background-position: center center;
+    background-size: 100%;
     -ms-background-size: cover;
     background-size: cover;
-    min-height: 400px;
+    min-height: 320px;
 }
 
 .text-container {
