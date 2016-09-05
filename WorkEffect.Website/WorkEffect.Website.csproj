@@ -149,11 +149,16 @@
     <Compile Include="Migrations\201609052026435_AddBaseTypesLetsSee.Designer.cs">
       <DependentUpon>201609052026435_AddBaseTypesLetsSee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609052208494_AddContentLayoutParameter.cs" />
+    <Compile Include="Migrations\201609052208494_AddContentLayoutParameter.Designer.cs">
+      <DependentUpon>201609052208494_AddContentLayoutParameter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\ContentLayout.cs" />
     <Compile Include="Models\ContentSection.cs" />
     <Compile Include="Models\ContentSite.cs" />
+    <Compile Include="Models\ContentLayoutParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -237,6 +242,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609052026435_AddBaseTypesLetsSee.resx">
       <DependentUpon>201609052026435_AddBaseTypesLetsSee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609052208494_AddContentLayoutParameter.resx">
+      <DependentUpon>201609052208494_AddContentLayoutParameter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

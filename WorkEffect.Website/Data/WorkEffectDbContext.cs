@@ -12,5 +12,6 @@ namespace WorkEffect.Website.Data
         public DbSet<ContentLayout> ContentLayouts { get; set; }
         public DbSet<ContentSection> ContentSections { get; set; }
         public DbSet<ContentSite> ContentSites { get; set; }
+        public DbSet<ContentLayoutParameter> LayoutParameters { get; set; }
     }
 }
