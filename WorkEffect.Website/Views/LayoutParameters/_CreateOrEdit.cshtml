@@ -1,0 +1,20 @@
+﻿@model WorkEffect.Website.Models.ContentLayoutParameter
+    
+@Html.HiddenFor(model => model.Id)
+@Html.HiddenFor(model => model.ContentLayoutId)
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Index, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Index, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Index, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+    </div>
+</div>

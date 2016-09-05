@@ -26,4 +26,14 @@
             @Html.ValidationMessageFor(model => model.Css, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @*@Html.LabelFor(model => model.Css, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        @Html.Label("Layout Parameters", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @{
+                Html.RenderAction("ListParameters", "LayoutParameters", new { id = Model.Id });
+            }
+        </div>
+    </div>
 </div>

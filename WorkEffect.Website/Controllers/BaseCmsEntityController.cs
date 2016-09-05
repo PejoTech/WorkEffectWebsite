@@ -286,5 +286,14 @@ namespace WorkEffect.Website.Controllers
             binder.BindModel(ControllerContext, bindingContext);
             return ModelState.IsValid;
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                Context.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
