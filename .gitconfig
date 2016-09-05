@@ -1,0 +1,5 @@
+[user]
+	email = peter@appswithlove.com
+	name = Peter Weber
+[core]
+	autocrlf = True
