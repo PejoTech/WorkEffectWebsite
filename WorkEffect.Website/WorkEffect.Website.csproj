@@ -136,8 +136,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseCmsController.cs" />
     <Compile Include="Controllers\BaseCmsEntityController.cs" />
+    <Compile Include="Controllers\LayoutsController.cs" />
     <Compile Include="Controllers\WorkEffectController.cs" />
     <Compile Include="Data\WorkEffectDbContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -212,9 +214,17 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\WorkEffect\Index.cshtml" />
+    <Content Include="Views\Layouts\Create.cshtml" />
+    <Content Include="Views\Layouts\Delete.cshtml" />
+    <Content Include="Views\Layouts\Details.cshtml" />
+    <Content Include="Views\Layouts\Edit.cshtml" />
+    <Content Include="Views\Layouts\Index.cshtml" />
+    <Content Include="Views\Layouts\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Section\" />
+    <Folder Include="Views\Site\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

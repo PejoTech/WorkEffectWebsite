@@ -32,9 +32,13 @@ body {
 }
 
 input,
-select,
-textarea {
+select {
     max-width: 280px;
+}
+
+textarea {
+    min-width: 500px;
+    min-height: 500px;
 }
 
 .intro {

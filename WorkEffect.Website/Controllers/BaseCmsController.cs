@@ -13,6 +13,15 @@ namespace WorkEffect.Website.Controllers
             Context = new WorkEffectDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                Context.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
         /// <summary>
         /// Called before the action method is invoked.
         /// </summary>
