@@ -231,7 +231,7 @@
     <Content Include="Views\LayoutParameters\Delete.cshtml" />
     <Content Include="Views\LayoutParameters\Details.cshtml" />
     <Content Include="Views\LayoutParameters\Edit.cshtml" />
-    <Content Include="Views\LayoutParameters\ListParameters.cshtml" />
+    <Content Include="Views\LayoutParameters\List.cshtml" />
     <Content Include="Views\LayoutParameters\_CreateOrEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>

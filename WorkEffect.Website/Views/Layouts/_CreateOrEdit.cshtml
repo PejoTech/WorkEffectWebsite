@@ -32,7 +32,7 @@
         @Html.Label("Layout Parameters", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @{
-                Html.RenderAction("ListParameters", "LayoutParameters", new { id = Model.Id });
+                Html.RenderAction("List", "LayoutParameters", new { id = Model.Id });
             }
         </div>
     </div>
