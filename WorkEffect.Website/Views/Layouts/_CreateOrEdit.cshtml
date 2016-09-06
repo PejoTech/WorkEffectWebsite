@@ -27,13 +27,15 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @*@Html.LabelFor(model => model.Css, htmlAttributes: new { @class = "control-label col-md-2" })*@
-        @Html.Label("Layout Parameters", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @{
-                Html.RenderAction("List", "LayoutParameters", new { id = Model.Id });
-            }
+    @if (Model.Id > 0)
+    {
+        <div class="form-group">
+            @Html.Label("Layout Parameters", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @{
+                    Html.RenderAction("List", "LayoutParameters", new {id = Model.Id}); 
+                }
+            </div>
         </div>
-    </div>
+    }
 </div>

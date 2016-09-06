@@ -233,10 +233,11 @@
     <Content Include="Views\LayoutParameters\Edit.cshtml" />
     <Content Include="Views\LayoutParameters\List.cshtml" />
     <Content Include="Views\LayoutParameters\_CreateOrEdit.cshtml" />
+    <Content Include="Views\LayoutParameters\_Details.cshtml" />
+    <Content Include="Views\Layouts\_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Section\" />
     <Folder Include="Views\Site\" />
   </ItemGroup>
   <ItemGroup>

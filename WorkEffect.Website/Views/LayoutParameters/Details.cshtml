@@ -7,35 +7,9 @@
 <h2>Details</h2>
 
 <div>
-    <h4>ContentLayoutParameter</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ContentLayout.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContentLayout.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Index)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Index)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-    </dl>
+    @Html.Partial("_Details")
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

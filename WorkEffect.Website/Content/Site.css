@@ -37,8 +37,8 @@ select {
 }
 
 textarea {
-    min-width: 500px;
     min-height: 500px;
+    width: 100%
 }
 
 .intro {
@@ -190,6 +190,10 @@ textarea {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #fff;
+}
+
+.table-actions {
+    min-width: 200px
 }
 
 @media(min-width:768px) {
