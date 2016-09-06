@@ -139,6 +139,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseCmsController.cs" />
     <Compile Include="Controllers\BaseCmsEntityController.cs" />
+    <Compile Include="Controllers\BaseCmsEntityControllerAsync.cs" />
     <Compile Include="Controllers\LayoutParametersController.cs" />
     <Compile Include="Controllers\LayoutsController.cs" />
     <Compile Include="Controllers\WorkEffectController.cs" />

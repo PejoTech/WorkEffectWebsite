@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using WorkEffect.Website.Models;
 
@@ -10,7 +12,7 @@ namespace WorkEffect.Website.Controllers
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class BaseCmsEntityController<T> : BaseCmsController where T: BaseEntity, new()
+    public abstract class BaseCmsEntityControllerAsync<T> : BaseCmsController where T: BaseEntity, new()
     {
         // behaviour
         public bool AfterCreate_ShowDetails = false;
@@ -23,18 +25,18 @@ namespace WorkEffect.Website.Controllers
         /// Gets the Index view.
         /// </summary>
         /// <returns></returns>
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View(GetList());
+            return View(await GetList());
         }
 
         /// <summary>
         /// Gets the entities to display in the Index view.
         /// </summary>
         /// <returns></returns>
-        public virtual List<T> GetList()
+        public virtual async Task<List<T>> GetList()
         {
-            return Context.Set<T>().ToList();
+            return await Context.Set<T>().ToListAsync();
         }
 
 
@@ -43,9 +45,9 @@ namespace WorkEffect.Website.Controllers
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns></returns>
-        public virtual T GetEntity(int id)
+        public virtual async Task<T> GetEntity(int id)
         {
-            return Context.Set<T>().First(x => x.Id == id);
+            return await Context.Set<T>().FirstAsync(x => x.Id == id);
         }
 
 
@@ -58,9 +60,9 @@ namespace WorkEffect.Website.Controllers
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns></returns>
-        public virtual ViewResult Details(int id)
+        public virtual async Task<ViewResult> Details(int id)
         {
-            var model = GetEntity(id);
+            var model = await GetEntity(id);
             return View(model);
         }
 
@@ -89,14 +91,14 @@ namespace WorkEffect.Website.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public virtual ActionResult Create(T model, FormCollection data)
+        public virtual async Task<ActionResult> Create(T model, FormCollection data)
         {
             UpdateModel(model, data);
             if (ModelState.IsValid)
             {
                 Context.Set<T>().Add(model);
                 OnCreated(model);
-                Context.SaveChanges();
+                await Context.SaveChangesAsync();
 
                 if (AfterCreate_ShowDetails)
                 {
@@ -137,9 +139,9 @@ namespace WorkEffect.Website.Controllers
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns></returns>
-        public virtual ActionResult Edit(int id)
+        public virtual async Task<ActionResult> Edit(int id)
         {
-            var model = GetEntity(id);
+            var model = await GetEntity(id);
             OnEdit(model);
             return View(model);
         }
@@ -153,15 +155,15 @@ namespace WorkEffect.Website.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public virtual ActionResult Edit(int id, FormCollection data)
+        public virtual async Task<ActionResult> Edit(int id, FormCollection data)
         {
-            var model = GetEntity(id);
+            var model = await GetEntity(id);
 
             UpdateModel(model, data);
             if (ModelState.IsValid)
             {
                 OnEdited(model);
-                Context.SaveChangesAsync();
+                await Context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             
@@ -194,9 +196,9 @@ namespace WorkEffect.Website.Controllers
         /// </summary>
         /// <param name="id">The id.</param>
         /// <returns></returns>
-        public virtual ActionResult Delete(int id)
+        public virtual async Task<ActionResult> Delete(int id)
         {
-            var model = GetEntity(id);
+            var model = await GetEntity(id);
             OnDelete(model);
             return View(model);
         }
@@ -209,12 +211,12 @@ namespace WorkEffect.Website.Controllers
         /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public virtual ActionResult DeleteConfirmed(int id)
+        public virtual async Task<ActionResult> DeleteConfirmed(int id)
         {
-            var model = GetEntity(id);
+            var model = await GetEntity(id);
             Context.Set<T>().Remove(model);
             OnDeleted(model);
-            Context.SaveChangesAsync();
+            await Context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

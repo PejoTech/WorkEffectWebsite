@@ -12,7 +12,7 @@ using WorkEffect.Website.Models;
 
 namespace WorkEffect.Website.Controllers
 {
-    public class LayoutsController : BaseCmsEntityController<ContentLayout>
+    public class LayoutsController : BaseCmsEntityControllerAsync<ContentLayout>
     {
     }
 }
