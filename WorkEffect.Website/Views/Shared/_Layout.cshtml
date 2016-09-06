@@ -10,6 +10,10 @@
     <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900,500,700' rel='stylesheet' type='text/css'>
 
     @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/parallax")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -47,9 +51,6 @@
         </nav>
     </div>
 
-    @*<div class="content-shadow">
-        </div>*@
-
     @RenderBody()
 
     <footer class="footer text-white">
@@ -67,10 +68,6 @@
             </div>
         </div>
     </footer>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/parallax")
 
     <script type="text/javascript">
         $(document).ready(function () {

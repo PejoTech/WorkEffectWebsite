@@ -227,13 +227,7 @@
     <Content Include="Views\Layouts\Edit.cshtml" />
     <Content Include="Views\Layouts\Index.cshtml" />
     <Content Include="Views\Layouts\_CreateOrEdit.cshtml" />
-    <Content Include="Views\LayoutParameters\Create.cshtml" />
-    <Content Include="Views\LayoutParameters\Delete.cshtml" />
-    <Content Include="Views\LayoutParameters\Details.cshtml" />
-    <Content Include="Views\LayoutParameters\Edit.cshtml" />
     <Content Include="Views\LayoutParameters\List.cshtml" />
-    <Content Include="Views\LayoutParameters\_CreateOrEdit.cshtml" />
-    <Content Include="Views\LayoutParameters\_Details.cshtml" />
     <Content Include="Views\Layouts\_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>

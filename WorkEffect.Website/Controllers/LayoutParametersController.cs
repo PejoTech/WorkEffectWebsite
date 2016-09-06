@@ -5,8 +5,9 @@ using WorkEffect.Website.Models;
 
 namespace WorkEffect.Website.Controllers
 {
-    public class LayoutParametersController : BaseCmsEntityControllerAsync<ContentLayoutParameter>
+    public class LayoutParametersController : BaseCmsEntityController<ContentLayoutParameter>
     {
+        [ChildActionOnly]
         public ActionResult List(int id)
         {
             ViewBag.LayoutId = id;
@@ -22,6 +23,11 @@ namespace WorkEffect.Website.Controllers
         {
             model.ContentLayoutId = parentID;
             base.OnCreate(model, parentID);
+        }
+
+        public override ActionResult Create(ContentLayoutParameter model, FormCollection data)
+        {
+            return base.Create(model, data);
         }
     }
 }

@@ -27,15 +27,28 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        function attachAjaxSubmitHandler(button, target) {
+            $(button).click(function (event) {
+                if (typeof target !== 'undefined' && target !== false) {
+                    event.preventDefault();
+                    $.post(target.attr('action'), target.serialize(), function (data) {
+                        target.closest('.ajax-boundary').html(data);
+                    });
+                }
+            });
+        }
+    </script>
+
     @if (Model.Id > 0)
     {
-        <div class="form-group">
-            @Html.Label("Layout Parameters", htmlAttributes: new {@class = "control-label col-md-2"})
+        <div class="form-group ajax-boundary">
+            @Html.Label("Layout Parameters", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @{
-                    Html.RenderAction("List", "LayoutParameters", new {id = Model.Id}); 
+                    Html.RenderAction("List", "LayoutParameters", new { id = Model.Id });
                 }
             </div>
         </div>
-    }
+                    }
 </div>
